@@ -14,9 +14,6 @@ import net.minecraft.util.Icon;
 
 public class BlockThickwoodLeaves extends BlockLeaves {
 	
-	public Icon normal = null;
-	public Icon rare = null;
-	
 	public BlockThickwoodLeaves(int par1) {
 		super(par1);
 		this.setCreativeTab(JamesForest.tab);
@@ -34,15 +31,12 @@ public class BlockThickwoodLeaves extends BlockLeaves {
 	
 	@Override
     public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
-		if(par2 == 0) {
-			return normal;
-		} else {
-			return rare;
-		}
+		return this.blockIcon;
 	}
 
 	@Override
     public void registerIcons(IconRegister register) {
+<<<<<<< HEAD
 		if (this.graphicsLevel == true){
 			this.normal = register.registerIcon("jamesforest:denseForestNormalLeavesOpaque");
 	        this.rare = register.registerIcon("jamesforest:denseForestRareLeavesOpaque");
@@ -51,12 +45,14 @@ public class BlockThickwoodLeaves extends BlockLeaves {
 	        this.rare = register.registerIcon("jamesforest:denseForestRareLeaves");
 		}
         
+=======
+        this.blockIcon = register.registerIcon("jamesforest:leaves");
+>>>>>>> 3d9c55fd1f146857cc257a5f52ade8577853ee95
     }
 	
 	@Override
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		par3List.add(new ItemStack(par1, 1, 0));
-		par3List.add(new ItemStack(par1, 1, 1));
 	}
 	
 	@Override

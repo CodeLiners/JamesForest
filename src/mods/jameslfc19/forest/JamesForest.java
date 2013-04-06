@@ -2,6 +2,10 @@ package mods.jameslfc19.forest;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.Configuration;
 import mods.jameslfc19.forest.biomes.BiomeGenDenseForest;
 import mods.jameslfc19.forest.world.WorldGenThickwood;
@@ -48,11 +52,11 @@ public class JamesForest {
 		
 		thickwood.setCreativeTab(tab);
 		leaves.setCreativeTab(tab);
-		
+				
 		GameRegistry.addBiome(new BiomeGenDenseForest(70));
 		GameRegistry.registerWorldGenerator(new WorldGenThickwood()); 
 		GameRegistry.registerWorldGenerator(new WorldGenRareOak()); 
-				
+						
 	}
 	
 }
