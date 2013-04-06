@@ -5,9 +5,6 @@ import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenDenseForest extends BiomeGenBase {
-		
-	/** The tree generator. */
-    protected WorldGenThickwood worldGenerator;
 
 	public BiomeGenDenseForest(int par1) {
 		super(par1);
@@ -15,7 +12,6 @@ public class BiomeGenDenseForest extends BiomeGenBase {
         this.fillerBlock = (byte)Block.dirt.blockID;
         this.setBiomeName("Dense Forest");
         this.setMinMaxHeight(0.1F, 0.2F);
-        this.worldGenerator = new WorldGenThickwood();
 	}
 
 }

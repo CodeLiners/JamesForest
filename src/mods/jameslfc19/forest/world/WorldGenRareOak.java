@@ -2,7 +2,11 @@ package mods.jameslfc19.forest.world;
 
 import java.util.Random;
 
+<<<<<<< HEAD
 import mods.jameslfc19.forest.loot.DenseForestLoot;
+=======
+import mods.jameslfc19.forest.JamesForest;
+>>>>>>> 4cc0022f007f9c4ac4a25f8a6bf13f81de5e7da1
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.item.Item;
@@ -21,8 +25,8 @@ public class WorldGenRareOak implements IWorldGenerator{
 	/**Set the Tree properties here.**/
 	public static final WeightedRandomChestContent[] rareOakChestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Item.enderPearl.itemID, 0, 1, 1, 10), new WeightedRandomChestContent(Item.diamond.itemID, 0, 1, 3, 3), new WeightedRandomChestContent(Item.ingotIron.itemID, 0, 1, 5, 10), new WeightedRandomChestContent(Item.ingotGold.itemID, 0, 1, 3, 5), new WeightedRandomChestContent(Item.redstone.itemID, 0, 4, 9, 5), new WeightedRandomChestContent(Item.bread.itemID, 0, 1, 3, 15), new WeightedRandomChestContent(Item.appleRed.itemID, 0, 1, 3, 15), new WeightedRandomChestContent(Item.pickaxeSteel.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.swordSteel.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.plateSteel.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.helmetSteel.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.legsSteel.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.bootsSteel.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.appleGold.itemID, 0, 1, 1, 1)};
 	public Random random = new Random();
-	public int treeLogId = 5;
-	public int leavesId = 41;
+	public int treeLogId = JamesForest.thickwood.blockID;
+	public int leavesId = JamesForest.leaves.blockID;
 	public int treeBaseHeight = 9;
 	public int treeVarianceHeight = 3;
 	public int rarityNumerator = 1;
@@ -77,16 +81,25 @@ public class WorldGenRareOak implements IWorldGenerator{
     	
     	//Top Triangle
     	world.setBlock(chunkX, chunkY + blockHeight, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight, chunkZ, 1, 3);
     	world.setBlock(chunkX+1, chunkY + blockHeight, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX+1, chunkY + blockHeight, chunkZ, 1, 3);
     	world.setBlock(chunkX-1, chunkY + blockHeight, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight, chunkZ, 1, 3);
     	world.setBlock(chunkX, chunkY + blockHeight, chunkZ-1, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight, chunkZ-1, 1, 3);
     	world.setBlock(chunkX, chunkY + blockHeight, chunkZ+1, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight, chunkZ+1, 1, 3);
     	
     	//Second Triangle
     	world.setBlock(chunkX+1, chunkY + blockHeight-1, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX+1, chunkY + blockHeight-1, chunkZ, 1, 3);
     	world.setBlock(chunkX-1, chunkY + blockHeight-1, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ, 1, 3);
     	world.setBlock(chunkX, chunkY + blockHeight-1, chunkZ-1, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight-1, chunkZ-1, 1, 3);
     	world.setBlock(chunkX, chunkY + blockHeight-1, chunkZ+1, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight-1, chunkZ+1, 1, 3);
     	
     	//Random Corners
     	for (int a=1; a<=4; a++){
@@ -95,18 +108,22 @@ public class WorldGenRareOak implements IWorldGenerator{
     		case 1: 
     			if (randomSelect == 1){
     			world.setBlock(chunkX+1, chunkY + blockHeight-1, chunkZ+1, leavesId);
+    			world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ+1, 1, 3);
     			}
     		case 2: 
     			if (randomSelect == 1){
     			world.setBlock(chunkX+1, chunkY + blockHeight-1, chunkZ-1, leavesId);
+    			world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ+1, 1, 3);
     			}
     		case 3: 
     			if (randomSelect == 1){
     			world.setBlock(chunkX-1, chunkY + blockHeight-1, chunkZ-1, leavesId);
+    			world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ+1, 1, 3);
     			}
     		case 4: 
     			if (randomSelect == 1){
     			world.setBlock(chunkX-1, chunkY + blockHeight-1, chunkZ+1, leavesId);
+    			world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ+1, 1, 3);
     			}
     		}
     	}
@@ -116,10 +133,12 @@ public class WorldGenRareOak implements IWorldGenerator{
     		for (int x = 0; x<=4; x++){
     			if (world.getBlockId(treeLeavesX -x, chunkY + blockHeight-2, treeLeavesZ-z) != treeLogId){
     			world.setBlock(treeLeavesX -x, chunkY + blockHeight-2, treeLeavesZ-z, leavesId);
+    			world.setBlockMetadataWithNotify(treeLeavesX -x, chunkY + blockHeight-3, treeLeavesZ-z, 1, 3);
     			}
     		} for (int x = 0; x<=4; x++){
     			if (world.getBlockId(treeLeavesX -x, chunkY + blockHeight-3, treeLeavesZ-z) != treeLogId){
     			world.setBlock(treeLeavesX -x, chunkY + blockHeight-3, treeLeavesZ-z, leavesId);
+    			world.setBlockMetadataWithNotify(treeLeavesX -x, chunkY + blockHeight-3, treeLeavesZ-z, 1, 3);
     			}
     		}
     	}

@@ -2,6 +2,7 @@ package mods.jameslfc19.forest.world;
 
 import java.util.Random;
 
+import mods.jameslfc19.forest.JamesForest;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.world.World;
@@ -13,8 +14,8 @@ import cpw.mods.fml.common.IWorldGenerator;
 public class WorldGenThickwood implements IWorldGenerator{
 	
 	/**Set the Tree properties here.**/
-	public int treeLogId = 5;
-	public int leavesId = 57;
+	public int treeLogId = JamesForest.thickwood.blockID;
+	public int leavesId = JamesForest.leaves.blockID;
 	public int treeBaseHeight = 6;
 	public int treeVarianceHeight = 3;
 	public Random random = new Random();
@@ -63,16 +64,25 @@ public class WorldGenThickwood implements IWorldGenerator{
     	
     	//Top Triangle
     	world.setBlock(chunkX, chunkY + blockHeight, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight, chunkZ, 0, 3);
     	world.setBlock(chunkX+1, chunkY + blockHeight, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX+1, chunkY + blockHeight, chunkZ, 0, 3);
     	world.setBlock(chunkX-1, chunkY + blockHeight, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight, chunkZ, 0, 3);
     	world.setBlock(chunkX, chunkY + blockHeight, chunkZ-1, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight, chunkZ-1, 0, 3);
     	world.setBlock(chunkX, chunkY + blockHeight, chunkZ+1, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight, chunkZ+1, 0, 3);
     	
     	//Second Triangle
     	world.setBlock(chunkX+1, chunkY + blockHeight-1, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX+1, chunkY + blockHeight-1, chunkZ, 0, 3);
     	world.setBlock(chunkX-1, chunkY + blockHeight-1, chunkZ, leavesId);
+		world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ, 0, 3);
     	world.setBlock(chunkX, chunkY + blockHeight-1, chunkZ-1, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight-1, chunkZ-1, 0, 3);
     	world.setBlock(chunkX, chunkY + blockHeight-1, chunkZ+1, leavesId);
+		world.setBlockMetadataWithNotify(chunkX, chunkY + blockHeight-1, chunkZ+1, 0, 3);
     	
     	//Random Corners
     	for (int a=1; a<=4; a++){
@@ -81,18 +91,22 @@ public class WorldGenThickwood implements IWorldGenerator{
     		case 1: 
     			if (randomSelect == 1){
     			world.setBlock(chunkX+1, chunkY + blockHeight-1, chunkZ+1, leavesId);
+    			world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ+1, 0, 3);
     			}
     		case 2: 
     			if (randomSelect == 1){
     			world.setBlock(chunkX+1, chunkY + blockHeight-1, chunkZ-1, leavesId);
+    			world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ+1, 0, 3);
     			}
     		case 3: 
     			if (randomSelect == 1){
     			world.setBlock(chunkX-1, chunkY + blockHeight-1, chunkZ-1, leavesId);
+    			world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ+1, 0, 3);
     			}
     		case 4: 
     			if (randomSelect == 1){
     			world.setBlock(chunkX-1, chunkY + blockHeight-1, chunkZ+1, leavesId);
+    			world.setBlockMetadataWithNotify(chunkX-1, chunkY + blockHeight-1, chunkZ+1, 0, 3);
     			}
     		}
     	}
@@ -102,13 +116,16 @@ public class WorldGenThickwood implements IWorldGenerator{
     		for (int x = 0; x<=4; x++){
     			if (world.getBlockId(treeLeavesX -x, chunkY + blockHeight-2, treeLeavesZ-z) != treeLogId){
     			world.setBlock(treeLeavesX -x, chunkY + blockHeight-2, treeLeavesZ-z, leavesId);
+    			world.setBlockMetadataWithNotify(treeLeavesX -x, chunkY + blockHeight-3, treeLeavesZ-z, 0, 3);
     			}
     		} for (int x = 0; x<=4; x++){
     			if (world.getBlockId(treeLeavesX -x, chunkY + blockHeight-3, treeLeavesZ-z) != treeLogId){
     			world.setBlock(treeLeavesX -x, chunkY + blockHeight-3, treeLeavesZ-z, leavesId);
+    			world.setBlockMetadataWithNotify(treeLeavesX -x, chunkY + blockHeight-3, treeLeavesZ-z, 0, 3);
     			}
     		}
     	}
+
     	
     	return true;
 	}
