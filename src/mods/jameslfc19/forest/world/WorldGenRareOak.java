@@ -4,7 +4,6 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
-import net.minecraft.entity.item.EntityMinecartChest;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
@@ -13,7 +12,6 @@ import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.common.IWorldGenerator;
 
@@ -51,7 +49,7 @@ public class WorldGenRareOak implements IWorldGenerator{
 				}
 				BiomeGenBase biome = world.getBiomeGenForCoords(chunkX1, chunkZ1);
 				String biomeName = biome.biomeName;
-				boolean isValidBiome = biomeName == "denceForest";
+				boolean isValidBiome = biomeName == "Dense Forest";
 				int blockBeneath = world.getBlockId(chunkX1, chunkY - 1, chunkZ1);
 				Block soil = Block.blocksList[blockBeneath];
 				boolean isValidSoil = soil != null && soil.canSustainPlant(world, chunkX1, chunkY - 1, chunkZ1, ForgeDirection.UP, (BlockSapling)Block.sapling) && blockBeneath == 2;	
