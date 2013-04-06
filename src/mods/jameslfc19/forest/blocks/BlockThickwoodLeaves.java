@@ -27,6 +27,12 @@ public class BlockThickwoodLeaves extends BlockLeaves {
 	}
 	
 	@Override
+	public boolean isOpaqueCube()
+    {
+        return !this.graphicsLevel;
+    }
+	
+	@Override
     public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
 		if(par2 == 0) {
 			return normal;
@@ -37,8 +43,14 @@ public class BlockThickwoodLeaves extends BlockLeaves {
 
 	@Override
     public void registerIcons(IconRegister register) {
-        this.normal = register.registerIcon("jamesforest:normal");
-        this.rare = register.registerIcon("jamesforest:rare");
+		if (this.graphicsLevel == true){
+			this.normal = register.registerIcon("jamesforest:denseForestNormalLeavesOpaque");
+	        this.rare = register.registerIcon("jamesforest:denseForestRareLeavesOpaque");
+		} else {
+			this.normal = register.registerIcon("jamesforest:denseForestNormalLeaves");
+	        this.rare = register.registerIcon("jamesforest:denseForestRareLeaves");
+		}
+        
     }
 	
 	@Override
