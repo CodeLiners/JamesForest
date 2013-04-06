@@ -2,4 +2,6 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties version="1.0">
     <entry key="tile.logThickwood.name">Thickwood</entry>
+    <entry key="tile.leavesThickwood.name">Thickwood Leaves</entry>
+    <entry key="itemGroup.jamesforest">James' Forest</entry>
 </properties>

@@ -1,6 +1,7 @@
 package mods.jameslfc19.forest;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.Configuration;
 import mods.jameslfc19.forest.biomes.BiomeGenDenseForest;
 import mods.jameslfc19.forest.world.WorldGenThickwood;
@@ -24,6 +25,8 @@ public class JamesForest {
 	
 	public static Block thickwood;
 	public static Block leaves;
+	
+	public static CreativeTabs tab;
 		
 	@PreInit
 	public void preLoad(FMLPreInitializationEvent event) {
@@ -38,13 +41,18 @@ public class JamesForest {
 	@Init
 	public void load(FMLInitializationEvent event) {
 		
+		tab = new ForestTab();
+		
 		GameRegistry.registerBlock(thickwood, "Thickwood Log");
 		GameRegistry.registerBlock(leaves, "Thickwood Leaves");
+		
+		thickwood.setCreativeTab(tab);
+		leaves.setCreativeTab(tab);
 		
 		GameRegistry.addBiome(new BiomeGenDenseForest(70));
 		GameRegistry.registerWorldGenerator(new WorldGenThickwood()); 
 		GameRegistry.registerWorldGenerator(new WorldGenRareOak()); 
-		
+				
 	}
 	
 }
