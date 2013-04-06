@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 
 
 public class BlockThickwoodLeaves extends BlockLeaves {
@@ -37,11 +38,21 @@ public class BlockThickwoodLeaves extends BlockLeaves {
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		par3List.add(new ItemStack(par1, 1, 0));
 	}
+	
+	@Override
+    public boolean isOpaqueCube() {
+		return true;
+	}
 
 	@Override
     public int damageDropped(int par1) {
         return 0;
     }
+	
+	@Override
+    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5) {
+		return true;
+	}
 
 	@Override
     public int idDropped(int par1, Random random, int par3) {

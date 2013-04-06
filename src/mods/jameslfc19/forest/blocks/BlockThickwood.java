@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class BlockThickwood extends BlockLog {
@@ -47,5 +48,10 @@ public class BlockThickwood extends BlockLog {
     public int idDropped(int par1, Random random, int par3) {
         return JamesForest.thickwood.blockID;
     }
+	
+	@Override
+    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5) {
+		return true;
+	}
 
 }
