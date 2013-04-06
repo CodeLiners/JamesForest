@@ -2,6 +2,7 @@ package mods.jameslfc19.forest.world;
 
 import java.util.Random;
 
+import mods.jameslfc19.forest.loot.DenseForestLoot;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.item.Item;
@@ -138,7 +139,8 @@ public class WorldGenRareOak implements IWorldGenerator{
         TileEntityChest tile = (TileEntityChest)world.getBlockTileEntity(x, y-2, z);
         if(tile != null)
         {
-        tile.setInventorySlotContents(1, new ItemStack(Block.blockDiamond, 1));
+        DenseForestLoot loot = new DenseForestLoot();
+        tile.setInventorySlotContents(1, loot.generateLoot(random, 0));
         }
         
         
