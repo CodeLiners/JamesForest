@@ -1,4 +1,4 @@
-package mods.jameslfc19.practise.world.gen;
+package mods.jameslfc19.forest.world;
 
 import java.util.Random;
 
@@ -10,7 +10,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.common.IWorldGenerator;
 
-public class WorldGenCoolTree implements IWorldGenerator{
+public class WorldGenThickwood implements IWorldGenerator{
 	
 	/**Set the Tree properties here.**/
 	public int treeLogId = 5;
@@ -39,7 +39,7 @@ public class WorldGenCoolTree implements IWorldGenerator{
 			}
 			BiomeGenBase biome = world.getBiomeGenForCoords(chunkX1, chunkZ1);
 			String biomeName = biome.biomeName;
-			boolean isValidBiome = biomeName == "StoneHenge";
+			boolean isValidBiome = biomeName == "denceForest";
 			int blockBeneath = world.getBlockId(chunkX1, chunkY - 1, chunkZ1);
 			Block soil = Block.blocksList[blockBeneath];
 			boolean isValidSoil = soil != null && soil.canSustainPlant(world, chunkX1, chunkY - 1, chunkZ1, ForgeDirection.UP, (BlockSapling)Block.sapling) && blockBeneath == 2;	
@@ -60,17 +60,20 @@ public class WorldGenCoolTree implements IWorldGenerator{
     	int treeLeavesX = chunkX + 2;
     	int treeLeavesZ = chunkZ + 3;
     	//int treeLeavesY = blockHeight+1;
+    	
     	//Top Triangle
     	world.setBlock(chunkX, chunkY + blockHeight, chunkZ, leavesId);
     	world.setBlock(chunkX+1, chunkY + blockHeight, chunkZ, leavesId);
     	world.setBlock(chunkX-1, chunkY + blockHeight, chunkZ, leavesId);
     	world.setBlock(chunkX, chunkY + blockHeight, chunkZ-1, leavesId);
     	world.setBlock(chunkX, chunkY + blockHeight, chunkZ+1, leavesId);
+    	
     	//Second Triangle
     	world.setBlock(chunkX+1, chunkY + blockHeight-1, chunkZ, leavesId);
     	world.setBlock(chunkX-1, chunkY + blockHeight-1, chunkZ, leavesId);
     	world.setBlock(chunkX, chunkY + blockHeight-1, chunkZ-1, leavesId);
     	world.setBlock(chunkX, chunkY + blockHeight-1, chunkZ+1, leavesId);
+    	
     	//Random Corners
     	for (int a=1; a<=4; a++){
     		int randomSelect = random.nextInt(2);
@@ -93,6 +96,7 @@ public class WorldGenCoolTree implements IWorldGenerator{
     			}
     		}
     	}
+    	
     	//Bottom Two Layers.
     	for (int z = 1; z<=5; z++){
     		for (int x = 0; x<=4; x++){
@@ -105,7 +109,8 @@ public class WorldGenCoolTree implements IWorldGenerator{
     			}
     		}
     	}
+    	
     	return true;
 	}
 	
-	}
+}

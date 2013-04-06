@@ -1,9 +1,9 @@
-package mods.jameslfc19.practise;
+package mods.jameslfc19.forest;
 
 
-import mods.jameslfc19.practise.biomes.BiomeGenHenge;
-import mods.jameslfc19.practise.world.gen.WorldGenCoolTree;
-import mods.jameslfc19.practise.world.gen.WorldGenRareOak;
+import mods.jameslfc19.forest.biomes.BiomeGenDenseForest;
+import mods.jameslfc19.forest.world.WorldGenThickwood;
+import mods.jameslfc19.forest.world.WorldGenRareOak;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -12,22 +12,22 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-@Mod(modid = "James' Forest!", name = "James' Forest!", version = "0.0.1")
-public class Main {
+@Mod(modid = "JamesForest", name = "James' Forest", version = "0.0.1")
+public class JamesForest {
 
-	@Instance("James' Forest!")
-	public static Main instance;
+	@Instance("JamesForest")
+	public static JamesForest instance;
 	
 	//World Gen
-	public static WorldGenCoolTree worldGenDenseForest = new WorldGenCoolTree();
+	public static WorldGenThickwood worldGenDenseForest = new WorldGenThickwood();
 	public static WorldGenRareOak worldGenRareOak = new WorldGenRareOak();
 	
 	//Biomes
-	public static BiomeGenHenge genDenseForest = new BiomeGenDenseForest(70);
+	public static BiomeGenDenseForest genDenseForest = new BiomeGenDenseForest(70);
 
 	@Init
 	public void load(FMLInitializationEvent evt) {
-		GameRegistry.addBiome(genHenge);
+		GameRegistry.addBiome(genDenseForest);
 		GameRegistry.registerWorldGenerator(worldGenDenseForest); 
 		GameRegistry.registerWorldGenerator(worldGenRareOak); 
 		
