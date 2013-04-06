@@ -7,12 +7,13 @@ import net.minecraft.item.ItemStack;
 
 public class DenseForestLoot {
 	
-	public int itemNumber = 0; //Number of Items that are available.
+	public int numberOfItems = 1; //Number of Items that are available.
+	public int itemNumber = numberOfItems++;
 	
 	public ItemStack generateLoot(Random random, int Item){
 		int itemID = getItemID(random, Item);
-		int itemChance = getItemChance(itemID);
-		int itemMaxStack = getItemMaxStack(itemID);
+		int itemChance = getItemChance(Item);
+		int itemMaxStack = getItemMaxStack(Item);
 		int itemStack = random.nextInt(itemMaxStack);
 		int denominator = 100;
 		int spawnDecision = random.nextInt(denominator);
@@ -36,21 +37,21 @@ public class DenseForestLoot {
 	}
 	
 	public int getItemChance(int itemID){
-		int[] itemChance = new int[itemID];
+		int[] itemChance = new int[itemNumber];
 		
 			//Register Item Chance Of Spawning. (Out of 100.)
-			itemChance[Block.blockDiamond.blockID] = 10; 
-			itemChance[Block.blockGold.blockID] = 10; 
+			itemChance[0] = 10; 
+			itemChance[1] = 100; 
 			
 			return itemChance[itemID];
 	}
 	
 	public int getItemMaxStack(int itemID){
-		int[] itemMaxStack = new int[itemID];
+		int[] itemMaxStack = new int[itemNumber];
 		
 			//Register Item Chance Of Spawning. (Out of 100.)
-			itemMaxStack[Block.blockDiamond.blockID] = 5; 
-			itemMaxStack[Block.blockGold.blockID] = 5;
+			itemMaxStack[0] = 5; 
+			itemMaxStack[1] = 5;
 			
 			return itemMaxStack[itemID];
 	}

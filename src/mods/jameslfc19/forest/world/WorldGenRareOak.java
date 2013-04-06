@@ -2,11 +2,8 @@ package mods.jameslfc19.forest.world;
 
 import java.util.Random;
 
-<<<<<<< HEAD
 import mods.jameslfc19.forest.loot.DenseForestLoot;
-=======
 import mods.jameslfc19.forest.JamesForest;
->>>>>>> 4cc0022f007f9c4ac4a25f8a6bf13f81de5e7da1
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.item.Item;
