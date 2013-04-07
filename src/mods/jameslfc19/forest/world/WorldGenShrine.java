@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.common.DungeonHooks;
 
 public class WorldGenShrine implements IWorldGenerator {
 	
@@ -566,15 +567,14 @@ public class WorldGenShrine implements IWorldGenerator {
     TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)world.getBlockTileEntity(i + 3, k + 3, j + 1);
 
     if (tileentitymobspawner != null) {
-        tileentitymobspawner.func_98049_a().setMobID("Zombie");
-    
+        tileentitymobspawner.func_98049_a().setMobID(DungeonHooks.getRandomDungeonMob(new Random()));
     }
 	
-	world.setBlock(i + 3, k + 3, j + 0, 54);
+	world.setBlock(i + 3, k + 3, j + 0, Block.chest.blockID);
     TileEntityChest tile = (TileEntityChest)world.getBlockTileEntity(i + 3, k + 3, j + 0);
     if(tile != null) {
     	Random rand = new Random();
-    	WeightedRandomChestContent.generateChestContents(rand, ChestGenHooks.getItems(ChestGenHooks.VILLAGE_BLACKSMITH, rand), tile, ChestGenHooks.getCount(VILLAGE_BLACKSMITH, rand));
+    	WeightedRandomChestContent.generateChestContents(rand, ChestGenHooks.getItems(ChestGenHooks.DUNGEON_CHEST, rand), tile, ChestGenHooks.getCount(ChestGenHooks.DUNGEON_CHEST, rand));
     }
 		}
 		
