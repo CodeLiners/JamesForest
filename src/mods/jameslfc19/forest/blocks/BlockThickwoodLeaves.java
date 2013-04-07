@@ -41,7 +41,7 @@ public class BlockThickwoodLeaves extends BlockLeaves {
 	
 	@Override
     public boolean isOpaqueCube() {
-		return true;
+		return false;
 	}
 
 	@Override
