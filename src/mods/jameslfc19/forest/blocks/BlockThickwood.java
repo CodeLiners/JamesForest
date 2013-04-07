@@ -4,14 +4,12 @@ import java.util.List;
 import java.util.Random;
 
 import mods.jameslfc19.forest.JamesForest;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class BlockThickwood extends BlockLog {
 	

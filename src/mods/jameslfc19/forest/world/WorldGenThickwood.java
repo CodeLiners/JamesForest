@@ -52,7 +52,7 @@ public class WorldGenThickwood implements IWorldGenerator{
 		}
 	
 	public boolean growTree(int chunkX, int chunkY, int chunkZ, World world) {
-		System.out.println("New tree at "+chunkX+" | "+chunkY+" | "+chunkZ);
+		//System.out.println("New tree at "+chunkX+" | "+chunkY+" | "+chunkZ);
 		int treeHeight = treeBaseHeight + random.nextInt(treeVarianceHeight);
     	int blockHeight;
     	for (blockHeight = 0; blockHeight<=treeHeight; blockHeight++){

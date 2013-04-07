@@ -8,7 +8,6 @@ import mods.jameslfc19.forest.JamesForest;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.util.WeightedRandomChestContent;
@@ -26,8 +25,8 @@ public class WorldGenRareOak implements IWorldGenerator{
 	public Random random = new Random();
 	public int treeLogId = JamesForest.thickwood.blockID;
 	public int leavesId = JamesForest.leaves.blockID;
-	public int treeBaseHeight = 9;
-	public int treeVarianceHeight = 3;
+	public int treeBaseHeight = 10;
+	public int treeVarianceHeight = 2;
 	public int rarityNumerator = 1;
 	public int rarityDenominator = 20;
 	
@@ -35,8 +34,8 @@ public class WorldGenRareOak implements IWorldGenerator{
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 		/**Set the Tree spawn properties here.**/
 		int treeDensity = 1; //Amount of tries to plant tree per chunk
-		int chunkYMin = 63; //Y = 60
-		int chunkYMax = 100; //Y = 100
+		int chunkYMin = 63;
+		int chunkYMax = 100;
 		
 		int rarityDecider = random.nextInt(20);
 		
@@ -68,7 +67,7 @@ public class WorldGenRareOak implements IWorldGenerator{
 	}
 	
 	public boolean growTree(int chunkX, int chunkY, int chunkZ, World world) {
-		System.out.println("New tree at "+chunkX+" | "+chunkY+" | "+chunkZ);
+		System.out.println("New rare tree at "+chunkX+" | "+chunkY+" | "+chunkZ);
 		int treeHeight = treeBaseHeight + random.nextInt(treeVarianceHeight);
     	int blockHeight;
     	for (blockHeight = 0; blockHeight<=treeHeight; blockHeight++){

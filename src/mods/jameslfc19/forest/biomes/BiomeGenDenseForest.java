@@ -1,6 +1,5 @@
 package mods.jameslfc19.forest.biomes;
 
-import mods.jameslfc19.forest.world.WorldGenThickwood;
 import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeGenBase;
 
