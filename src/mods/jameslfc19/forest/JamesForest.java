@@ -26,6 +26,8 @@ public class JamesForest {
 	
 	public static Block thickwood;
 	public static Block leaves;
+	public static Block stoneGranite;
+	public static Block brickGranite;
 	
 	public static CreativeTabs tab;
 		
@@ -46,9 +48,13 @@ public class JamesForest {
 		
 		GameRegistry.registerBlock(thickwood, "Thickwood Log");
 		GameRegistry.registerBlock(leaves, "Thickwood Leaves");
+		GameRegistry.registerBlock(stoneGranite, "Granite");
+		GameRegistry.registerBlock(brickGranite, "Granite Bricks");
 		
 		thickwood.setCreativeTab(tab);
 		leaves.setCreativeTab(tab);
+		stoneGranite.setCreativeTab(tab);
+		brickGranite.setCreativeTab(tab);
 				
 		GameRegistry.addBiome(new BiomeGenDenseForest(70));
 		GameRegistry.registerWorldGenerator(new WorldGenThickwood()); 
