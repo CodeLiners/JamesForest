@@ -1,7 +1,5 @@
 package mods.jameslfc19.forest.world;
 
-import static net.minecraftforge.common.ChestGenHooks.VILLAGE_BLACKSMITH;
-
 import java.util.Random;
 
 import cpw.mods.fml.common.IWorldGenerator;
@@ -21,23 +19,31 @@ public class WorldGenShrine implements IWorldGenerator {
 	public int spawnRateNumerator = 1;
 	public int spawnRateDenominator = 500;
 	
-	public boolean isDecentSpawn2(int i, int k, int j, World world) {
+	public boolean isDecentSpawn2(int i, int j, int k, World world) {
         
-		if (world.getBlockId(i, j, k) == 0) {
+		if (world.getBlockId(i, j, k) == 0 ||world.getBlockId(i, j, k) == Block.waterStill.blockID ||world.getBlockId(i, j, k) == Block.waterMoving.blockID) {
 			return false;
-		} else if (world.getBlockId(i+6, j, k) == 0){
+		} else if (world.getBlockId(i+6, j, k) == 0 || world.getBlockId(i+6, j, k) == Block.waterStill.blockID || world.getBlockId(i+6, j, k) == Block.waterMoving.blockID){
 			return false;
-		} else if (world.getBlockId(i, j, k+6) == 0){
+		} else if (world.getBlockId(i, j, k+6) == 0 || world.getBlockId(i, j, k+6) == Block.waterStill.blockID || world.getBlockId(i, j, k+6) == Block.waterMoving.blockID){
 			return false;
-		} else if (world.getBlockId(i+6, j, k+6) == 0){
+		} else if (world.getBlockId(i+6, j, k+6) == 0 || world.getBlockId(i+6, j, k+6) == Block.waterStill.blockID || world.getBlockId(i+6, j, k+6) == Block.waterMoving.blockID){
 			return false;
-		} else if (world.getBlockId(i, j-6, k) == 0) {
+		} else if (world.getBlockId(i, j+6, k) == 0 || world.getBlockId(i, j+6, k) == Block.waterStill.blockID || world.getBlockId(i, j+6, k) == Block.waterMoving.blockID) {
 			return false;
-		} else if (world.getBlockId(i+6, j-6, k) == 0){
+		} else if (world.getBlockId(i+6, j+6, k) == 0 || world.getBlockId(i+6, j+6, k) == Block.waterStill.blockID || world.getBlockId(i+6, j+6, k) == Block.waterMoving.blockID){
 			return false;
-		} else if (world.getBlockId(i, j-6, k+6) == 0){
+		} else if (world.getBlockId(i, j+6, k+6) == 0 || world.getBlockId(i, j+6, k+6) == Block.waterStill.blockID || world.getBlockId(i, j+6, k+6) == Block.waterMoving.blockID){
 			return false;
-		} else if (world.getBlockId(i+6, j-6, k+6) == 0){
+		} else if (world.getBlockId(i+6, j+6, k+6) == 0 || world.getBlockId(i+6, j+6, k+6) == Block.waterStill.blockID || world.getBlockId(i+6, j+6, k+6) == Block.waterMoving.blockID){
+			return false;
+		} else if (world.getBlockId(i, j+11, k) != 0) {
+			return false;
+		} else if (world.getBlockId(i+6, j+11, k) != 0){
+			return false;
+		} else if (world.getBlockId(i, j+11, k+6) != 0){
+			return false;
+		} else if (world.getBlockId(i+6, j+11, k+6) != 0){
 			return false;
 		} else {
 			return true;
@@ -61,14 +67,13 @@ public class WorldGenShrine implements IWorldGenerator {
 
     for (j=chunkYMin; j<=chunkYMax; j++){
             int blockidnumber = world.getBlockId(i, j, k);
-            if (blockidnumber == 0){
+            if (blockidnumber == 0 ||blockidnumber == 78 || blockidnumber == 31 || blockidnumber == 37 || blockidnumber == 38 || blockidnumber == 39 || blockidnumber == 40){
                     break;
             }
     }
     j = j-7;
    
-    byte biomeTopBlock = biome.topBlock;
-    boolean isDecentSpawn = isDecentSpawn2(i, k, j, world);
+    boolean isDecentSpawn = isDecentSpawn2(i, j, k, world);
     boolean randomDecide = random.nextInt(spawnRateDenominator) == spawnRateNumerator;
    
     if (randomDecide){
@@ -116,13 +121,6 @@ public class WorldGenShrine implements IWorldGenerator {
 	world.setBlock(i + 0, j + 5, k + 4, Block.stoneBrick.blockID);
 	world.setBlock(i + 0, j + 5, k + 5, Block.stoneBrick.blockID);
 	world.setBlock(i + 0, j + 5, k + 6, Block.dirt.blockID);
-	world.setBlock(i + 0, j + 6, k + 0, biomeTopBlock);
-	world.setBlock(i + 0, j + 6, k + 1, biomeTopBlock);
-	world.setBlock(i + 0, j + 6, k + 2, biomeTopBlock);
-	world.setBlock(i + 0, j + 6, k + 3, biomeTopBlock);
-	world.setBlock(i + 0, j + 6, k + 4, biomeTopBlock);
-	world.setBlock(i + 0, j + 6, k + 5, biomeTopBlock);
-	world.setBlock(i + 0, j + 6, k + 6, biomeTopBlock);
 	world.setBlock(i + 0, j + 7, k + 0, 0);
 	world.setBlock(i + 0, j + 7, k + 1, 0);
 	world.setBlock(i + 0, j + 7, k + 2, 0);
@@ -186,13 +184,6 @@ public class WorldGenShrine implements IWorldGenerator {
 	world.setBlock(i + 1, j + 5, k + 4, 0);
 	world.setBlock(i + 1, j + 5, k + 5, 0);
 	world.setBlock(i + 1, j + 5, k + 6, Block.stoneBrick.blockID);
-	world.setBlock(i + 1, j + 6, k + 0, biomeTopBlock);
-	world.setBlock(i + 1, j + 6, k + 1, biomeTopBlock);
-	world.setBlock(i + 1, j + 6, k + 2, biomeTopBlock);
-	world.setBlock(i + 1, j + 6, k + 3, biomeTopBlock);
-	world.setBlock(i + 1, j + 6, k + 4, biomeTopBlock);
-	world.setBlock(i + 1, j + 6, k + 5, biomeTopBlock);
-	world.setBlock(i + 1, j + 6, k + 6, biomeTopBlock);
 	world.setBlock(i + 1, j + 7, k + 0, 0);
 	world.setBlock(i + 1, j + 7, k + 1, 0);
 	world.setBlock(i + 1, j + 7, k + 2, 0);
@@ -256,13 +247,9 @@ public class WorldGenShrine implements IWorldGenerator {
 	world.setBlock(i + 2, j + 5, k + 4, 0);
 	world.setBlock(i + 2, j + 5, k + 5, 0);
 	world.setBlock(i + 2, j + 5, k + 6, Block.stoneBrick.blockID);
-	world.setBlock(i + 2, j + 6, k + 0, biomeTopBlock);
-	world.setBlock(i + 2, j + 6, k + 1, biomeTopBlock);
 	world.setBlock(i + 2, j + 6, k + 2, Block.dirt.blockID);
 	world.setBlock(i + 2, j + 6, k + 3, Block.stoneBrick.blockID);
 	world.setBlock(i + 2, j + 6, k + 4, Block.dirt.blockID);
-	world.setBlock(i + 2, j + 6, k + 5, biomeTopBlock);
-	world.setBlock(i + 2, j + 6, k + 6, biomeTopBlock);
 	world.setBlock(i + 2, j + 7, k + 0, 0);
 	world.setBlock(i + 2, j + 7, k + 1, 0);
 	world.setBlock(i + 2, j + 7, k + 2, Block.stoneBrick.blockID);
@@ -322,13 +309,9 @@ public class WorldGenShrine implements IWorldGenerator {
 	world.setBlock(i + 3, j + 5, k + 4, 0);
 	world.setBlock(i + 3, j + 5, k + 5, 0);
 	world.setBlock(i + 3, j + 5, k + 6, Block.stoneBrick.blockID);
-	world.setBlock(i + 3, j + 6, k + 0, biomeTopBlock);
-	world.setBlock(i + 3, j + 6, k + 1, biomeTopBlock);
 	world.setBlock(i + 3, j + 6, k + 2, Block.stoneBrick.blockID);
 	world.setBlock(i + 3, j + 6, k + 3, 0);
 	world.setBlock(i + 3, j + 6, k + 4, Block.stoneBrick.blockID, 1, 0);
-	world.setBlock(i + 3, j + 6, k + 5, biomeTopBlock);
-	world.setBlock(i + 3, j + 6, k + 6, biomeTopBlock);
 	world.setBlock(i + 3, j + 7, k + 0, 0);
 	world.setBlock(i + 3, j + 7, k + 1, 0);
 	world.setBlock(i + 3, j + 7, k + 2, 0);
@@ -346,7 +329,7 @@ public class WorldGenShrine implements IWorldGenerator {
 	world.setBlock(i + 3, j + 9, k + 0, 0);
 	world.setBlock(i + 3, j + 9, k + 1, 0);
 	world.setBlock(i + 3, j + 9, k + 2, Block.stoneBrick.blockID, 1, 0);
-	world.setBlock(i + 3, j + 9, k + 3, 0);
+	world.setBlock(i + 3, j + 9, k + 3, Block.stoneBrick.blockID, 1, 0);
 	world.setBlock(i + 3, j + 9, k + 4, Block.stoneBrick.blockID);
 	world.setBlock(i + 3, j + 9, k + 5, 0);
 	world.setBlock(i + 3, j + 9, k + 6, 0);
@@ -392,13 +375,9 @@ public class WorldGenShrine implements IWorldGenerator {
 	world.setBlock(i + 4, j + 5, k + 4, 0);
 	world.setBlock(i + 4, j + 5, k + 5, 0);
 	world.setBlock(i + 4, j + 5, k + 6, Block.stoneBrick.blockID);
-	world.setBlock(i + 4, j + 6, k + 0, biomeTopBlock);
-	world.setBlock(i + 4, j + 6, k + 1, biomeTopBlock);
 	world.setBlock(i + 4, j + 6, k + 2, Block.dirt.blockID);
 	world.setBlock(i + 4, j + 6, k + 3, Block.stoneBrick.blockID);
 	world.setBlock(i + 4, j + 6, k + 4, Block.dirt.blockID);
-	world.setBlock(i + 4, j + 6, k + 5, biomeTopBlock);
-	world.setBlock(i + 4, j + 6, k + 6, biomeTopBlock);
 	world.setBlock(i + 4, j + 7, k + 0, 0);
 	world.setBlock(i + 4, j + 7, k + 1, 0);
 	world.setBlock(i + 4, j + 7, k + 2, Block.stoneBrick.blockID);
@@ -460,13 +439,6 @@ public class WorldGenShrine implements IWorldGenerator {
 	world.setBlock(i + 5, j + 5, k + 4, 0);
 	world.setBlock(i + 5, j + 5, k + 5, 0);
 	world.setBlock(i + 5, j + 5, k + 6, Block.stoneBrick.blockID);
-	world.setBlock(i + 5, j + 6, k + 0, biomeTopBlock);
-	world.setBlock(i + 5, j + 6, k + 1, biomeTopBlock);
-	world.setBlock(i + 5, j + 6, k + 2, biomeTopBlock);
-	world.setBlock(i + 5, j + 6, k + 3, biomeTopBlock);
-	world.setBlock(i + 5, j + 6, k + 4, biomeTopBlock);
-	world.setBlock(i + 5, j + 6, k + 5, biomeTopBlock);
-	world.setBlock(i + 5, j + 6, k + 6, biomeTopBlock);
 	world.setBlock(i + 5, j + 7, k + 0, 0);
 	world.setBlock(i + 5, j + 7, k + 1, 0);
 	world.setBlock(i + 5, j + 7, k + 2, 0);
@@ -530,13 +502,6 @@ public class WorldGenShrine implements IWorldGenerator {
 	world.setBlock(i + 6, j + 5, k + 4, Block.stoneBrick.blockID);
 	world.setBlock(i + 6, j + 5, k + 5, Block.stoneBrick.blockID);
 	world.setBlock(i + 6, j + 5, k + 6, Block.dirt.blockID);
-	world.setBlock(i + 6, j + 6, k + 0, biomeTopBlock);
-	world.setBlock(i + 6, j + 6, k + 1, biomeTopBlock);
-	world.setBlock(i + 6, j + 6, k + 2, biomeTopBlock);
-	world.setBlock(i + 6, j + 6, k + 3, biomeTopBlock);
-	world.setBlock(i + 6, j + 6, k + 4, biomeTopBlock);
-	world.setBlock(i + 6, j + 6, k + 5, biomeTopBlock);
-	world.setBlock(i + 6, j + 6, k + 6, biomeTopBlock);
 	world.setBlock(i + 6, j + 7, k + 0, 0);
 	world.setBlock(i + 6, j + 7, k + 1, 0);
 	world.setBlock(i + 6, j + 7, k + 2, 0);
@@ -558,23 +523,67 @@ public class WorldGenShrine implements IWorldGenerator {
 	world.setBlock(i + 6, j + 9, k + 4, 0);
 	world.setBlock(i + 6, j + 9, k + 5, 0);
 	world.setBlock(i + 6, j + 9, k + 6, 0);
-	world.setBlockMetadataWithNotify(i + 2, j + 9, k + 1, Block.torchWood.blockID, 4);
-	world.setBlockMetadataWithNotify(i + 2, j + 9, k + 5, Block.torchWood.blockID, 3);
-	world.setBlockMetadataWithNotify(i + 4, j + 9, k + 1, Block.torchWood.blockID, 4);
-	world.setBlockMetadataWithNotify(i + 4, j + 9, k + 5, Block.torchWood.blockID, 3);
+	world.setBlock(i + 2, j + 9, k + 1, Block.torchWood.blockID, 4, 0);
+	world.setBlock(i + 2, j + 9, k + 5, Block.torchWood.blockID, 3, 0);
+	world.setBlock(i + 4, j + 9, k + 1, Block.torchWood.blockID, 4, 0);
+	world.setBlock(i + 4, j + 9, k + 5, Block.torchWood.blockID, 3, 0);
+
+	if (biome.topBlock == Block.sand.blockID) {
+		int biomeTopBlock = Block.sandStone.blockID;
+		world.setBlock(i + 0, j + 6, k + 0, biomeTopBlock);
+		world.setBlock(i + 0, j + 6, k + 1, biomeTopBlock);
+		world.setBlock(i + 0, j + 6, k + 2, biomeTopBlock);
+		world.setBlock(i + 0, j + 6, k + 3, biomeTopBlock);
+		world.setBlock(i + 0, j + 6, k + 4, biomeTopBlock);
+		world.setBlock(i + 0, j + 6, k + 5, biomeTopBlock);
+		world.setBlock(i + 0, j + 6, k + 6, biomeTopBlock);	
+		world.setBlock(i + 1, j + 6, k + 0, biomeTopBlock);
+		world.setBlock(i + 1, j + 6, k + 1, biomeTopBlock);
+		world.setBlock(i + 1, j + 6, k + 2, biomeTopBlock);
+		world.setBlock(i + 1, j + 6, k + 3, biomeTopBlock);
+		world.setBlock(i + 1, j + 6, k + 4, biomeTopBlock);
+		world.setBlock(i + 1, j + 6, k + 5, biomeTopBlock);
+		world.setBlock(i + 1, j + 6, k + 6, biomeTopBlock);
+		world.setBlock(i + 2, j + 6, k + 0, biomeTopBlock);
+		world.setBlock(i + 2, j + 6, k + 1, biomeTopBlock);
+		world.setBlock(i + 2, j + 6, k + 5, biomeTopBlock);
+		world.setBlock(i + 2, j + 6, k + 6, biomeTopBlock);
+		world.setBlock(i + 3, j + 6, k + 0, biomeTopBlock);
+		world.setBlock(i + 3, j + 6, k + 1, biomeTopBlock);
+		world.setBlock(i + 3, j + 6, k + 5, biomeTopBlock);
+		world.setBlock(i + 3, j + 6, k + 6, biomeTopBlock);
+		world.setBlock(i + 4, j + 6, k + 0, biomeTopBlock);
+		world.setBlock(i + 4, j + 6, k + 1, biomeTopBlock);
+		world.setBlock(i + 4, j + 6, k + 5, biomeTopBlock);
+		world.setBlock(i + 4, j + 6, k + 6, biomeTopBlock);
+		world.setBlock(i + 5, j + 6, k + 0, biomeTopBlock);
+		world.setBlock(i + 5, j + 6, k + 1, biomeTopBlock);
+		world.setBlock(i + 5, j + 6, k + 2, biomeTopBlock);
+		world.setBlock(i + 5, j + 6, k + 3, biomeTopBlock);
+		world.setBlock(i + 5, j + 6, k + 4, biomeTopBlock);
+		world.setBlock(i + 5, j + 6, k + 5, biomeTopBlock);
+		world.setBlock(i + 5, j + 6, k + 6, biomeTopBlock);	
+		world.setBlock(i + 6, j + 6, k + 0, biomeTopBlock);
+		world.setBlock(i + 6, j + 6, k + 1, biomeTopBlock);
+		world.setBlock(i + 6, j + 6, k + 2, biomeTopBlock);
+		world.setBlock(i + 6, j + 6, k + 3, biomeTopBlock);
+		world.setBlock(i + 6, j + 6, k + 4, biomeTopBlock);
+		world.setBlock(i + 6, j + 6, k + 5, biomeTopBlock);
+		world.setBlock(i + 6, j + 6, k + 6, biomeTopBlock);
+	}
 	
-	world.setBlock(i + 3, k + 3, j + 1, Block.mobSpawner.blockID);
-    TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)world.getBlockTileEntity(i + 3, k + 3, j + 1);
+	world.setBlock(i + 3, j + 1, k + 3, Block.mobSpawner.blockID);
+    TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)world.getBlockTileEntity(i + 3, j + 1, k + 3);
 
     if (tileentitymobspawner != null) {
         tileentitymobspawner.func_98049_a().setMobID(DungeonHooks.getRandomDungeonMob(new Random()));
     }
 	
-	world.setBlock(i + 3, k + 3, j + 0, Block.chest.blockID);
-    TileEntityChest tile = (TileEntityChest)world.getBlockTileEntity(i + 3, k + 3, j + 0);
+	world.setBlock(i + 3,  j + 0, k + 3, Block.chest.blockID);
+    TileEntityChest tile = (TileEntityChest)world.getBlockTileEntity(i + 3,  j + 0, k + 3);
     if(tile != null) {
     	Random rand = new Random();
-    	WeightedRandomChestContent.generateChestContents(rand, ChestGenHooks.getItems(ChestGenHooks.DUNGEON_CHEST, rand), tile, ChestGenHooks.getCount(ChestGenHooks.DUNGEON_CHEST, rand));
+    	WeightedRandomChestContent.generateChestContents(rand, ChestGenHooks.getItems(ChestGenHooks.PYRAMID_DESERT_CHEST, rand), tile, ChestGenHooks.getCount(ChestGenHooks.DUNGEON_CHEST, rand));
     }
 		}
 		
