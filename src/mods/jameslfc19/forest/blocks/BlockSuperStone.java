@@ -33,9 +33,6 @@ public class BlockSuperStone extends BlockStone {
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par4, float par5, float par6, float par7) {
 		if(!world.isRemote && !player.isSneaking() && player.inventory.getCurrentItem().getItem() == Item.diamond) {
-			player.playSound("mods.jamesforest.sounds.stoneChange.ogg", 1.0F, 1.0F);
-		}
-		if(!world.isRemote && !player.isSneaking() && player.inventory.getCurrentItem().getItem() == Item.diamond) {
 					x = x-10;
 					y = y-10;
 					z = z-10;

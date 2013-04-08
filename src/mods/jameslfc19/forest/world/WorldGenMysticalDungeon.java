@@ -6,8 +6,13 @@ import cpw.mods.fml.common.IWorldGenerator;
 
 import mods.jameslfc19.forest.JamesForest;
 import net.minecraft.block.Block;
+import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.common.DungeonHooks;
 
 public class WorldGenMysticalDungeon implements IWorldGenerator{
 	
@@ -121,7 +126,6 @@ public class WorldGenMysticalDungeon implements IWorldGenerator{
 		world.setBlock(i + 1, j + 2, k + 2, 0);
 		world.setBlock(i + 1, j + 2, k + 3, 0);
 		world.setBlock(i + 1, j + 2, k + 4, 0);
-		world.setBlock(i + 1, j + 2, k + 5, Block.cloth.blockID);
 		world.setBlock(i + 1, j + 2, k + 6, 0);
 		world.setBlock(i + 1, j + 2, k + 7, 0);
 		world.setBlock(i + 1, j + 2, k + 8, 0);
@@ -754,6 +758,38 @@ public class WorldGenMysticalDungeon implements IWorldGenerator{
 		world.setBlock(i + 10, j + 5, k + 8, JamesForest.superStone.blockID);
 		world.setBlock(i + 10, j + 5, k + 9, JamesForest.superStone.blockID);
 		world.setBlock(i + 10, j + 5, k + 10, JamesForest.superStone.blockID);
+		
+		world.setBlock(i + 1, j + 2, k + 5, Block.mobSpawner.blockID);
+	    TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)world.getBlockTileEntity(i + 1, j + 2, k + 5);
+
+	    if (tileentitymobspawner != null) {
+	        tileentitymobspawner.func_98049_a().setMobID(DungeonHooks.getRandomDungeonMob(new Random()));
+	    }
+	    
+		world.setBlock(i + 9, j + 2, k + 5, Block.mobSpawner.blockID);
+		TileEntityMobSpawner tileentitymobspawner2 = (TileEntityMobSpawner)world.getBlockTileEntity(i + 9, j + 2, k + 5);
+
+	    if (tileentitymobspawner2 != null) {
+	        tileentitymobspawner2.func_98049_a().setMobID(DungeonHooks.getRandomDungeonMob(new Random()));
+	    }
+
+		world.setBlock(i + 1, j + 1, k + 5, Block.chest.blockID, 5, 0);
+		if(random.nextInt(2) == 1){
+	    TileEntityChest tile = (TileEntityChest)world.getBlockTileEntity(i + 1, j + 1, k + 5);
+	    if(tile != null) {
+	    	Random rand = new Random();
+	    	WeightedRandomChestContent.generateChestContents(rand, ChestGenHooks.getItems(ChestGenHooks.PYRAMID_DESERT_CHEST, rand), tile, ChestGenHooks.getCount(ChestGenHooks.DUNGEON_CHEST, rand));
+	    }
+	    }
+		world.setBlock(i + 9, j + 1, k + 5, Block.chest.blockID, 4, 0);
+		if(random.nextInt(2) == 1){
+	    TileEntityChest tile2 = (TileEntityChest)world.getBlockTileEntity(i + 9, j + 1, k + 5);
+	    if(tile2 != null) {
+	    	Random rand = new Random();
+	    	WeightedRandomChestContent.generateChestContents(rand, ChestGenHooks.getItems(ChestGenHooks.PYRAMID_DESERT_CHEST, rand), tile2, ChestGenHooks.getCount(ChestGenHooks.DUNGEON_CHEST, rand));
+	    }
+		}
+	    
 	    }
 	}
 }
