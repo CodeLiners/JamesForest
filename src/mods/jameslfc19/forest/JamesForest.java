@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.Configuration;
 import mods.jameslfc19.forest.biomes.BiomeGenDenseForest;
+import mods.jameslfc19.forest.world.WorldGenOre;
 import mods.jameslfc19.forest.world.WorldGenShrine;
 import mods.jameslfc19.forest.world.WorldGenThickwood;
 import mods.jameslfc19.forest.world.WorldGenRareOak;
@@ -57,6 +58,7 @@ public class JamesForest {
 		brickGranite.setCreativeTab(tab);
 				
 		GameRegistry.addBiome(new BiomeGenDenseForest(70));
+		GameRegistry.registerWorldGenerator(new WorldGenOre()); 
 		GameRegistry.registerWorldGenerator(new WorldGenThickwood()); 
 		GameRegistry.registerWorldGenerator(new WorldGenRareOak()); 
 		GameRegistry.registerWorldGenerator(new WorldGenShrine()); 
