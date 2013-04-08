@@ -3,6 +3,7 @@ package mods.jameslfc19.forest;
 import cpw.mods.fml.common.registry.GameRegistry;
 import mods.jameslfc19.forest.blocks.BlockGranite;
 import mods.jameslfc19.forest.blocks.BlockGraniteBrick;
+import mods.jameslfc19.forest.blocks.BlockSuperStone;
 import mods.jameslfc19.forest.blocks.BlockThickwood;
 import mods.jameslfc19.forest.blocks.BlockThickwoodLeaves;
 import net.minecraft.block.Block;
@@ -19,6 +20,8 @@ public class ForestConfiguration {
 		JamesForest.leaves = new BlockThickwoodLeaves(config.getBlock("Thickwood Leaves", 2005).getInt(2005));
 		JamesForest.stoneGranite = new BlockGranite(config.getBlock("Granite", 2006).getInt(2006));
 		JamesForest.brickGranite = new BlockGraniteBrick(config.getBlock("Granite Brick", 2007).getInt(2007));
+		JamesForest.superStone = new BlockSuperStone(config.getBlock("Super Stone[Dungeon Block]", 2008).getInt(2008));
+
 		
 		OreDictionary.registerOre("logThickwood", JamesForest.thickwood);
 		OreDictionary.registerOre("stoneGranite", JamesForest.stoneGranite);
