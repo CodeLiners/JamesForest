@@ -18,12 +18,13 @@ public class WorldGenOre implements IWorldGenerator{
 		}
 	}
 			private void generateSurface(World world, Random rand, int chunkX, int chunkZ) {
-		        for(int a=0; a<1; a++){
+		        for(int a=0; a<4; a++){
 		        	int XCoord = chunkX + rand.nextInt(16);
 		        	int YCoord = rand.nextInt(40);
 		        	int ZCoord = chunkZ + rand.nextInt(16);
 		        	
 		        	(new WorldGenMinable(JamesForest.stoneGranite.blockID, 20)).generate(world, rand, XCoord, YCoord, ZCoord);
+		        	System.out.println("New Marble at "+ XCoord+" "+YCoord+""+ZCoord);
 		        }
 			}
 }
