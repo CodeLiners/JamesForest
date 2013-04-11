@@ -11,7 +11,6 @@ import mods.jameslfc19.forest.blocks.BlockThickwoodLeaves;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntitySign;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 
