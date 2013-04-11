@@ -13,8 +13,13 @@ public class WorldGenOre implements IWorldGenerator{
 	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {	
+<<<<<<< HEAD
 		if(world.provider.dimensionId == 0){
 			generateSurfaceMarble(world, random, chunkX, chunkZ);
+=======
+		if(world.provider.dimensionId != 1 && world.provider.dimensionId != -1){
+			generateSurface(world, random, chunkX, chunkZ);
+>>>>>>> 143b8d52d1bdd3f212620371fceca1f4ecce520f
 		}
 	}
 			private void generateSurfaceMarble(World world, Random rand, int chunkX, int chunkZ) {
