@@ -2,10 +2,13 @@ package mods.jameslfc19.forest;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import mods.jameslfc19.forest.biomes.BiomeGenDenseForest;
 import mods.jameslfc19.forest.handler.SoundHandler;
+import mods.jameslfc19.forest.utils.ColorUtils;
+import mods.jameslfc19.forest.world.WorldGenLimestone;
 import mods.jameslfc19.forest.world.WorldGenMysticalDungeon;
 import mods.jameslfc19.forest.world.WorldGenOre;
 import mods.jameslfc19.forest.world.WorldGenShrine;
@@ -35,6 +38,9 @@ public class JamesForest {
 	public static Block stoneGranite;
 	public static Block brickGranite;
 	public static Block superStone;
+	public static Block stoneLimestone;
+	public static Block brickLimestone;
+
 	
 	public static CreativeTabs tab;
 		
@@ -43,6 +49,7 @@ public class JamesForest {
 		
 		MinecraftForge.EVENT_BUS.register(new SoundHandler());
 		LanguageRegistry.instance().loadLocalization("/mods/jameslfc19/forest/lang/en_US.xml", "en_US", true);
+		LanguageRegistry.instance().addStringLocalization("tile.superStone.name", ColorUtils.applyColor(14) + "SuperStone");
 		
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		ForestConfiguration.init(config);
@@ -59,15 +66,23 @@ public class JamesForest {
 		GameRegistry.registerBlock(stoneGranite, "Granite");
 		GameRegistry.registerBlock(brickGranite, "Granite Bricks");
 		GameRegistry.registerBlock(superStone, "Super Stone[Dungeon Block]");
+		GameRegistry.registerBlock(stoneLimestone, "Limestone");
+		GameRegistry.registerBlock(brickLimestone, "Limestone Brick");
+
+
 		
 		thickwood.setCreativeTab(tab);
 		leaves.setCreativeTab(tab);
 		stoneGranite.setCreativeTab(tab);
 		brickGranite.setCreativeTab(tab);
+		stoneLimestone.setCreativeTab(tab);
+		brickLimestone.setCreativeTab(tab);
 		superStone.setCreativeTab(tab);
+
 				
 		GameRegistry.addBiome(new BiomeGenDenseForest(70));
 		GameRegistry.registerWorldGenerator(new WorldGenOre()); 
+		GameRegistry.registerWorldGenerator(new WorldGenLimestone()); 
 		GameRegistry.registerWorldGenerator(new WorldGenThickwood()); 
 		GameRegistry.registerWorldGenerator(new WorldGenRareOak()); 
 		GameRegistry.registerWorldGenerator(new WorldGenShrine()); 
