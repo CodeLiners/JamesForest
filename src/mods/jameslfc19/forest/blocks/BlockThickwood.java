@@ -3,6 +3,9 @@ package mods.jameslfc19.forest.blocks;
 import java.util.List;
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import mods.jameslfc19.forest.JamesForest;
 import net.minecraft.block.BlockLog;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -24,13 +27,13 @@ public class BlockThickwood extends BlockLog {
 	}
 
 	@Override
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+	public Icon getIcon(int par1, int par2) {
 		if(par1 < 2) {
 			return top;
 		}
 		return side;
 	}
-
+	
 	@Override
     public void registerIcons(IconRegister register) {
         this.top = register.registerIcon("jamesforest:denseForestTreeTop");

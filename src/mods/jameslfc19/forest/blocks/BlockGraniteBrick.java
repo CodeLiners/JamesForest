@@ -30,7 +30,7 @@ public class BlockGraniteBrick extends Block{
     }
 	
 	@Override
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+	public Icon getIcon(int par1, int par2) {
 		return face;
 	}
 	
