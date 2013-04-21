@@ -25,14 +25,13 @@ public class WorldGenLimestone implements IWorldGenerator
 		int z = chunkZ + random.nextInt(16);
 		int x = chunkX + random.nextInt(16);
 		int y;
-    	for (y=46; y<=64; y++){
+    	for (y=30; y<=64; y++){
 			int blockidnumber = world.getBlockId(x, y, z);
 			if (blockidnumber == Block.waterStill.blockID){
 				break;
 			}
 		}
-    	y++;
-    	this.numberOfBlocks = 20 + random.nextInt(5);	
+    	this.numberOfBlocks = 18;	
     	generate(world, random, x,y,z);
 	}
 
@@ -65,7 +64,7 @@ public class WorldGenLimestone implements IWorldGenerator
                         {
                             int j2 = par1World.getBlockId(i1, i2, j1);
 
-                            if (j2 == Block.dirt.blockID || j2 == JamesForest.stoneLimestone.blockID)
+                            if (j2 == Block.dirt.blockID || j2 == JamesForest.stoneLimestone.blockID || j2 == Block.blockClay.blockID)
                             {
                                 par1World.setBlock(i1, i2, j1, JamesForest.stoneLimestone.blockID);
                                 //System.out.println("New Limestone at "+ i1+" "+i2+" "+j1);

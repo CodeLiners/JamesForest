@@ -79,11 +79,11 @@ public class JamesForest {
 				
 		GameRegistry.addBiome(new BiomeGenDenseForest(70));
 		GameRegistry.registerWorldGenerator(new WorldGenOre()); 
-		GameRegistry.registerWorldGenerator(new WorldGenLimestone()); 
 		GameRegistry.registerWorldGenerator(new WorldGenThickwood()); 
 		GameRegistry.registerWorldGenerator(new WorldGenRareOak()); 
 		GameRegistry.registerWorldGenerator(new WorldGenShrine()); 
 		GameRegistry.registerWorldGenerator(new WorldGenMysticalDungeon()); 
+		GameRegistry.registerWorldGenerator(new WorldGenLimestone()); 
 
 						
 	}
