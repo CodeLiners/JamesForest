@@ -34,6 +34,8 @@ public class ForestConfiguration {
 		GameRegistry.addRecipe(new ItemStack(Block.planks, 4, 1), new Object[]{"X", 'X', JamesForest.thickwood});
 		GameRegistry.addRecipe(new ItemStack(JamesForest.brickGranite, 4), new Object[]{"XX ", "XX ", 'X', JamesForest.stoneGranite});
 		GameRegistry.addRecipe(new ItemStack(JamesForest.brickLimestone, 4), new Object[]{"XX ", "XX ", 'X', JamesForest.stoneLimestone});
+		
+		config.save();
 	}
 
 }
