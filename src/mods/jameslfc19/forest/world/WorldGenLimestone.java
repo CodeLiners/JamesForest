@@ -22,17 +22,19 @@ public class WorldGenLimestone implements IWorldGenerator
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		int z = chunkZ + random.nextInt(16);
-		int x = chunkX + random.nextInt(16);
+		for(int a=0; a<=2; a++){
+		int z = chunkZ*16 + random.nextInt(16);
+		int x = chunkX*16 + random.nextInt(16);
 		int y;
-    	for (y=30; y<=64; y++){
+    	for (y=40; y<=70; y++){
 			int blockidnumber = world.getBlockId(x, y, z);
 			if (blockidnumber == Block.waterStill.blockID){
 				break;
 			}
 		}
-    	this.numberOfBlocks = 18;	
+    	this.numberOfBlocks = 6;	
     	generate(world, random, x,y,z);
+		}
 	}
 
     public WorldGenLimestone()
@@ -48,6 +50,7 @@ public class WorldGenLimestone implements IWorldGenerator
         }
         else
         {
+        	System.out.println("New Limestone at "+par3+" "+par4+" "+par5);
             int l = par2Random.nextInt(this.numberOfBlocks - 2) + 2;
             byte b0 = 1;
 
@@ -64,7 +67,7 @@ public class WorldGenLimestone implements IWorldGenerator
                         {
                             int j2 = par1World.getBlockId(i1, i2, j1);
 
-                            if (j2 == Block.dirt.blockID || j2 == JamesForest.stoneLimestone.blockID || j2 == Block.blockClay.blockID)
+                            if (j2 == Block.dirt.blockID || j2 == JamesForest.stoneLimestone.blockID)
                             {
                                 par1World.setBlock(i1, i2, j1, JamesForest.stoneLimestone.blockID);
                                 //System.out.println("New Limestone at "+ i1+" "+i2+" "+j1);

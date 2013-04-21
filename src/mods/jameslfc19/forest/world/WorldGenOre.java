@@ -14,16 +14,16 @@ public class WorldGenOre implements IWorldGenerator{
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {	
 		if(world.provider.dimensionId != 1 && world.provider.dimensionId != -1){
-			generateSurfaceMarble(world, random, chunkX, chunkZ);
+			generateSurfaceGranite(world, random, chunkX, chunkZ);
 		}
 	}
-			private void generateSurfaceMarble(World world, Random rand, int chunkX, int chunkZ) {
-		        for(int a=0; a<8; a++){
-		        	int XCoord = chunkX + rand.nextInt(16);
+			private void generateSurfaceGranite(World world, Random rand, int chunkX, int chunkZ) {
+		        for(int a=0; a<6; a++){
+		        	int XCoord = chunkX*16 + rand.nextInt(16);
 		        	int YCoord = rand.nextInt(50);
-		        	int ZCoord = chunkZ + rand.nextInt(16);
+		        	int ZCoord = chunkZ*16 + rand.nextInt(16);
 		        	
-		        	(new WorldGenMinable(JamesForest.stoneGranite.blockID, 25)).generate(world, rand, XCoord, YCoord, ZCoord);
+		        	(new WorldGenMinable(JamesForest.stoneGranite.blockID, 60)).generate(world, rand, XCoord, YCoord, ZCoord);
 		        	//System.out.println("New Granite at "+ XCoord+" "+YCoord+" "+ZCoord);
 		        }
 			}
