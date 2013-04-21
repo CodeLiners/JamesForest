@@ -33,7 +33,9 @@ public class WorldGenLimestone implements IWorldGenerator
 			}
 		}
     	this.numberOfBlocks = 6;	
-    	generate(world, random, x,y,z);
+    	if(world.provider.dimensionId != 1 && world.provider.dimensionId != -1){
+    		generate(world, random, x,y,z);
+		}
 		}
 	}
 
@@ -50,7 +52,7 @@ public class WorldGenLimestone implements IWorldGenerator
         }
         else
         {
-        	System.out.println("New Limestone at "+par3+" "+par4+" "+par5);
+        	//System.out.println("New Limestone at "+par3+" "+par4+" "+par5);
             int l = par2Random.nextInt(this.numberOfBlocks - 2) + 2;
             byte b0 = 1;
 
