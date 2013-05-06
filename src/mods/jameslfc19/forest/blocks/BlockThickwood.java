@@ -3,10 +3,7 @@ package mods.jameslfc19.forest.blocks;
 import java.util.List;
 import java.util.Random;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-import mods.jameslfc19.forest.JamesForest;
+import mods.jameslfc19.forest.registry.JamesBlock;
 import net.minecraft.block.BlockLog;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -47,7 +44,7 @@ public class BlockThickwood extends BlockLog {
 	
 	@Override
     public int idDropped(int par1, Random random, int par3) {
-        return JamesForest.thickwood.blockID;
+        return JamesBlock.thickwood.blockID;
     }
 	
 	@Override

@@ -4,7 +4,7 @@ import java.util.Random;
 
 import cpw.mods.fml.common.IWorldGenerator;
 
-import mods.jameslfc19.forest.JamesForest;
+import mods.jameslfc19.forest.registry.JamesBlock;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -23,7 +23,7 @@ public class WorldGenOre implements IWorldGenerator{
 		        	int YCoord = rand.nextInt(50);
 		        	int ZCoord = chunkZ*16 + rand.nextInt(16);
 		        	
-		        	(new WorldGenMinable(JamesForest.stoneGranite.blockID, 60)).generate(world, rand, XCoord, YCoord, ZCoord);
+		        	(new WorldGenMinable(JamesBlock.stoneGranite.blockID, 60)).generate(world, rand, XCoord, YCoord, ZCoord);
 		        	//System.out.println("New Granite at "+ XCoord+" "+YCoord+" "+ZCoord);
 		        }
 			}

@@ -4,7 +4,7 @@ import static net.minecraftforge.common.ChestGenHooks.VILLAGE_BLACKSMITH;
 
 import java.util.Random;
 
-import mods.jameslfc19.forest.JamesForest;
+import mods.jameslfc19.forest.registry.JamesBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.item.Item;
@@ -23,8 +23,8 @@ public class WorldGenRareOak implements IWorldGenerator{
 	/**Set the Tree properties here.**/
 	public static final WeightedRandomChestContent[] rareOakChestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Item.enderPearl.itemID, 0, 1, 1, 10), new WeightedRandomChestContent(Item.diamond.itemID, 0, 1, 3, 3), new WeightedRandomChestContent(Item.ingotIron.itemID, 0, 1, 5, 10), new WeightedRandomChestContent(Item.ingotGold.itemID, 0, 1, 3, 5), new WeightedRandomChestContent(Item.redstone.itemID, 0, 4, 9, 5), new WeightedRandomChestContent(Item.bread.itemID, 0, 1, 3, 15), new WeightedRandomChestContent(Item.appleRed.itemID, 0, 1, 3, 15), new WeightedRandomChestContent(Item.pickaxeIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.swordIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.plateIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.helmetIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.legsIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.bootsIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.appleGold.itemID, 0, 1, 1, 1)};
 	public Random random = new Random();
-	public int treeLogId = JamesForest.thickwood.blockID;
-	public int leavesId = JamesForest.leaves.blockID;
+	public int treeLogId = JamesBlock.thickwood.blockID;
+	public int leavesId = JamesBlock.leaves.blockID;
 	public int treeBaseHeight = 10;
 	public int treeVarianceHeight = 2;
 	public int rarityNumerator = 1;

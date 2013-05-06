@@ -1,16 +1,13 @@
 package mods.jameslfc19.forest.blocks;
 
-import mods.jameslfc19.forest.JamesForest;
+import mods.jameslfc19.forest.registry.JamesBlock;
 import mods.jameslfc19.forest.utils.ColorUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockSuperStone extends BlockStone {
@@ -43,7 +40,7 @@ public class BlockSuperStone extends BlockStone {
 				for(int xchunk=x; xchunk<x+21; xchunk++){
 					for(int ychunk=y; ychunk<y+21; ychunk++){
 						for(int zchunk=z; zchunk<z+21; zchunk++){
-							if(world.getBlockId(xchunk, ychunk, zchunk) == JamesForest.superStone.blockID){
+							if(world.getBlockId(xchunk, ychunk, zchunk) == JamesBlock.superStone.blockID){
 								world.setBlock(xchunk, ychunk, zchunk, Block.stone.blockID);
 							}
 						}

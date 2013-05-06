@@ -1,5 +1,6 @@
 package mods.jameslfc19.forest;
 
+import mods.jameslfc19.forest.registry.JamesBlock;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
@@ -11,7 +12,7 @@ public class ForestTab extends CreativeTabs {
 	
 	@Override
 	public ItemStack getIconItemStack() {
-		return new ItemStack(JamesForest.thickwood, 1, 0);
+		return new ItemStack(JamesBlock.thickwood, 1, 0);
 	}
 
 }

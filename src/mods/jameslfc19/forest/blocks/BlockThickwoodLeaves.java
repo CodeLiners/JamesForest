@@ -3,7 +3,7 @@ package mods.jameslfc19.forest.blocks;
 import java.util.List;
 import java.util.Random;
 
-import mods.jameslfc19.forest.JamesForest;
+import mods.jameslfc19.forest.registry.JamesRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -17,7 +17,7 @@ public class BlockThickwoodLeaves extends BlockLeaves {
 
 	public BlockThickwoodLeaves(int par1) {
 		super(par1);
-		this.setCreativeTab(JamesForest.tab);
+		this.setCreativeTab(JamesRegistry.tab);
 		this.setUnlocalizedName("leavesThickwood");
 		this.setHardness(0.2F);
 		this.setLightOpacity(1);

@@ -2,7 +2,7 @@ package mods.jameslfc19.forest.world;
 
 import java.util.Random;
 
-import mods.jameslfc19.forest.JamesForest;
+import mods.jameslfc19.forest.registry.JamesBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.world.World;
@@ -14,8 +14,8 @@ import cpw.mods.fml.common.IWorldGenerator;
 public class WorldGenThickwood implements IWorldGenerator{
 	
 	/**Set the Tree properties here.**/
-	public int treeLogId = JamesForest.thickwood.blockID;
-	public int leavesId = JamesForest.leaves.blockID;
+	public int treeLogId = JamesBlock.thickwood.blockID;
+	public int leavesId = JamesBlock.leaves.blockID;
 	public int treeBaseHeight = 6;
 	public int treeVarianceHeight = 3;
 	public Random random = new Random();

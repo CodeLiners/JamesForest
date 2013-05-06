@@ -3,7 +3,7 @@ package mods.jameslfc19.forest.blocks;
 import java.util.List;
 import java.util.Random;
 
-import mods.jameslfc19.forest.JamesForest;
+import mods.jameslfc19.forest.registry.JamesBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -41,7 +41,7 @@ public class BlockGranite extends Block{
 	
 	@Override
     public int idDropped(int par1, Random random, int par3) {
-        return JamesForest.stoneGranite.blockID;
+        return JamesBlock.stoneGranite.blockID;
     }
 	
 	@Override
