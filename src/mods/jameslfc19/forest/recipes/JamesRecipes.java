@@ -5,6 +5,7 @@ import mods.jameslfc19.forest.registry.JamesItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class JamesRecipes {
@@ -17,6 +18,12 @@ public class JamesRecipes {
 		GameRegistry.addRecipe(new ItemStack(JamesBlock.stairsGranite, 4), new Object[]{"X  ", "XX ","XXX", 'X', JamesBlock.brickGranite});
 		GameRegistry.addRecipe(new ItemStack(JamesBlock.stairsLimestone, 4), new Object[]{"X  ", "XX ","XXX", 'X', JamesBlock.stoneLimestone});
 		GameRegistry.addRecipe(new ItemStack(Item.netherQuartz, 4), new Object[]{"GNG", "NGN", "GNG", 'G', JamesBlock.stoneGranite, 'N', Block.netherrack});
+		
+		if (Loader.isModLoaded("IC2")){
 		GameRegistry.addRecipe(new ItemStack(Item.netherQuartz, 4), new Object[]{"GNG", "NGN", "GNG", 'G', JamesItem.dustGranite, 'N', Block.netherrack});
+		}
+		if (Loader.isModLoaded("ThermalExpansion")){
+			GameRegistry.addRecipe(new ItemStack(Item.netherQuartz, 4), new Object[]{"GNG", "NGN", "GNG", 'G', JamesItem.pulverizedGranite, 'N', Block.netherrack});
+		}
 	}
 }
