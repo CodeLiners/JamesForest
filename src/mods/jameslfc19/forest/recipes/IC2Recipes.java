@@ -10,6 +10,7 @@ public class IC2Recipes {
 	public static void init() {
 		if (Loader.isModLoaded("IC2")){
 			Recipes.macerator.addRecipe(new ItemStack(JamesBlock.stoneGranite), new ItemStack(JamesItem.dustGranite, 2));
+			System.out.println("[JamesForest] IC2 Recipes Activated");
 		}
 	}
 }

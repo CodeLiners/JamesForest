@@ -1,6 +1,7 @@
 package mods.jameslfc19.forest;
 
 import net.minecraftforge.common.Configuration;
+import mods.jameslfc19.forest.recipes.EE3Recipes;
 import mods.jameslfc19.forest.recipes.IC2Recipes;
 import mods.jameslfc19.forest.recipes.JamesRecipes;
 import mods.jameslfc19.forest.recipes.ThermalExpansionRecipes;
@@ -17,7 +18,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-@Mod(modid = "JamesForest", name = "James' Forest", version = "0.0.1", dependencies = "after:ThermalExpansion;after:IC2")
+@Mod(modid = "JamesForest", name = "James' Forest", version = "0.0.1", dependencies = "after:ThermalExpansion;after:IC2;after:EE3")
 public class JamesForest {
 	
 	@Instance("JamesForest")
@@ -44,6 +45,7 @@ public class JamesForest {
 		JamesRecipes.init();
 		ThermalExpansionRecipes.init();
 		IC2Recipes.init();
+		EE3Recipes.init();
 		//MinecraftForge.EVENT_BUS.register(new SoundHandler());
 	}
 	

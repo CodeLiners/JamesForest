@@ -6,12 +6,14 @@ import mods.jameslfc19.forest.blocks.BlockJamesStairs;
 import mods.jameslfc19.forest.blocks.BlockLimestone;
 import mods.jameslfc19.forest.blocks.BlockLimestoneBrick;
 import mods.jameslfc19.forest.blocks.BlockSlab;
+import mods.jameslfc19.forest.blocks.BlockStep;
 import mods.jameslfc19.forest.blocks.BlockSuperStone;
 import mods.jameslfc19.forest.blocks.BlockThickwood;
 import mods.jameslfc19.forest.blocks.BlockThickwoodLeaves;
 import mods.jameslfc19.forest.item.ItemDust;
 import mods.jameslfc19.forest.registry.JamesBlock;
 import mods.jameslfc19.forest.registry.JamesItem;
+import net.minecraft.block.BlockHalfSlab;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -28,10 +30,12 @@ public class ForestConfiguration {
 		JamesBlock.brickLimestone = new BlockLimestoneBrick(config.getBlock("Limestone Brick", 2010).getInt(2010));
 		JamesItem.dustGranite =  new ItemDust(config.getItem("Granite Quartz Dust", 2011).getInt(2011), "Granite", true);
 		JamesItem.pulverizedGranite =  new ItemDust(config.getItem("Pulverized Granite", 2012).getInt(2012), "Granite", false);
-		JamesBlock.slabs = new BlockSlab(config.getBlock("Stone Slab", 2013).getInt(2013));
-		JamesBlock.stairsGranite = new BlockJamesStairs(config.getBlock("Granite Stairs", 2014).getInt(2014), JamesBlock.brickGranite, 0, "Granite");
-		JamesBlock.stairsLimestone = new BlockJamesStairs(config.getBlock("Limestone Stairs", 2015).getInt(2015), JamesBlock.brickLimestone, 0, "Limestone");
-
+		
+		JamesBlock.slabsDouble = (BlockHalfSlab)(new BlockStep(config.getBlock("Slab Double", 2013).getInt(2013), true));
+		JamesBlock.slabsSingle = (BlockHalfSlab)(new BlockStep(config.getBlock("Slab Single", 2014).getInt(2014), false));
+		
+		JamesBlock.stairsGranite = new BlockJamesStairs(config.getBlock("Granite Stairs", 2015).getInt(2015), JamesBlock.brickGranite, 0, "Granite");
+		JamesBlock.stairsLimestone = new BlockJamesStairs(config.getBlock("Limestone Stairs", 2016).getInt(2016), JamesBlock.brickLimestone, 0, "Limestone");
 		
 		OreDictionary.registerOre("logThickwood", JamesBlock.thickwood);
 		OreDictionary.registerOre("stoneGranite", JamesBlock.stoneGranite);

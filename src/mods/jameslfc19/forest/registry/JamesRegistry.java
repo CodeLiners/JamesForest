@@ -3,6 +3,8 @@ package mods.jameslfc19.forest.registry;
 import net.minecraft.creativetab.CreativeTabs;
 import mods.jameslfc19.forest.ForestTab;
 import mods.jameslfc19.forest.biomes.BiomeGenDenseForest;
+import mods.jameslfc19.forest.item.ItemDoubleSlab;
+import mods.jameslfc19.forest.item.ItemGraniteBrick;
 import mods.jameslfc19.forest.item.ItemSlab;
 import mods.jameslfc19.forest.world.WorldGenLimestone;
 import mods.jameslfc19.forest.world.WorldGenMysticalDungeon;
@@ -20,11 +22,12 @@ public class JamesRegistry {
 		GameRegistry.registerBlock(JamesBlock.thickwood, "Thickwood Log");
 		GameRegistry.registerBlock(JamesBlock.leaves, "Thickwood Leaves");
 		GameRegistry.registerBlock(JamesBlock.stoneGranite, "Granite");
-		GameRegistry.registerBlock(JamesBlock.brickGranite, "Granite Bricks");
+		GameRegistry.registerBlock(JamesBlock.brickGranite, ItemGraniteBrick.class, "Granite Bricks");
 		GameRegistry.registerBlock(JamesBlock.superStone, "Super Stone[Dungeon Block]");
 		GameRegistry.registerBlock(JamesBlock.stoneLimestone, "Limestone");
 		GameRegistry.registerBlock(JamesBlock.brickLimestone, "Limestone Brick");
-		GameRegistry.registerBlock(JamesBlock.slabs, ItemSlab.class, "Stone Slab");
+		//GameRegistry.registerBlock(JamesBlock.slabsSingle, ItemSlab.class, "Slab Single");
+		//GameRegistry.registerBlock(JamesBlock.slabsDouble, ItemDoubleSlab.class, "Slab Double");
 		GameRegistry.registerBlock(JamesBlock.stairsGranite, "Granite Stairs");
 		GameRegistry.registerBlock(JamesBlock.stairsLimestone, "Limestone Stairs");
 	}
@@ -47,7 +50,8 @@ public class JamesRegistry {
 		JamesBlock.stoneLimestone.setCreativeTab(tab);
 		JamesBlock.brickLimestone.setCreativeTab(tab);
 		//JamesBlock.superStone.setCreativeTab(tab);
-		JamesBlock.slabs.setCreativeTab(tab);
+		JamesBlock.slabsSingle.setCreativeTab(tab);
+		JamesBlock.slabsDouble.setCreativeTab(tab);
 		JamesBlock.stairsGranite.setCreativeTab(tab);
 		JamesBlock.stairsLimestone.setCreativeTab(tab);
 		

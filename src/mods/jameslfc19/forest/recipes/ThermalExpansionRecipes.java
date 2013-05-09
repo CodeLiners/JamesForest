@@ -14,6 +14,7 @@ public class ThermalExpansionRecipes {
 		if (Loader.isModLoaded("ThermalExpansion")){
 			CraftingManagers.pulverizerManager.addRecipe(380, new ItemStack(JamesBlock.stoneGranite), new ItemStack(JamesItem.pulverizedGranite, 2), new ItemStack(Block.cobblestone), 50);
 			CraftingManagers.sawmillManager.addRecipe(80, new ItemStack(JamesBlock.thickwood), new ItemStack(Block.planks, 4, 1), ItemRegistry.getItem("sawdust", 1), 100);
+			System.out.println("[JamesForest] Thermal Expansion Recipes Activated");
 		}
 	}
 }
