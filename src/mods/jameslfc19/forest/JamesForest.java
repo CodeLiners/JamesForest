@@ -18,7 +18,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-@Mod(modid = "JamesForest", name = "James' Forest", version = "0.0.1", dependencies = "after:ThermalExpansion;after:IC2;after:EE3")
+@Mod(modid = "JamesForest", name = "James' Forest", version = "0.1.0", dependencies = "after:ThermalExpansion;after:IC2;after:EE3")
 public class JamesForest {
 	
 	@Instance("JamesForest")
