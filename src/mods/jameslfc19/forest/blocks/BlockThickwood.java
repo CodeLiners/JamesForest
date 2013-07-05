@@ -33,8 +33,8 @@ public class BlockThickwood extends BlockLog {
 	
 	@Override
     public void registerIcons(IconRegister register) {
-        this.top = register.registerIcon("jamesforest:denseForestTreeTop");
-        this.side = register.registerIcon("jamesforest:denseForestTreeSide");
+        this.top = register.registerIcon("jamesworld:denseForestTreeTop");
+        this.side = register.registerIcon("jamesworld:denseForestTreeSide");
     }
 	
 	@Override

@@ -1,0 +1,11 @@
+tile.logThickwood.name=Thickwood
+tile.leavesThickwood.name=Thickwood Leaves
+materials.sub.stoneGranite.name=Granite
+materials.sub.brickGranite.name=Granite Brick
+materials.sub.carvedGranite.name=Chiseled Granite Brick
+materials.sub.stoneLimestone.name=Limestone
+materials.sub.brickLimestone.name=Limestone Brick
+slab.slabLimestone.name=Limestone Slab
+dust.sub.dustGranite.name=Granite Quartz Dust
+dust.sub.pulverizedGranite.name=Pulverized Granite Quartz
+itemGroup.jamesforest=James' World

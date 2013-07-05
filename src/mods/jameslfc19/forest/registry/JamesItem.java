@@ -4,5 +4,4 @@ import net.minecraft.item.Item;
 
 public class JamesItem {
 	public static Item dustGranite;
-	public static Item pulverizedGranite;
 }
