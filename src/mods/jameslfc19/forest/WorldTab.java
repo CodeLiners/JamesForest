@@ -13,7 +13,7 @@ public class WorldTab extends CreativeTabs {
 	
 	@Override
 	public ItemStack getIconItemStack() {
-		return new ItemStack(JamesItem.dustGranite, 1, 0);
+		return new ItemStack(JamesBlock.materials, 1, 2);
 	}
 
 }

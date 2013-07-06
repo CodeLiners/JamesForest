@@ -18,17 +18,17 @@ public class WorldConfiguration {
 		
 		JamesBlock.thickwood = new BlockThickwood(config.getBlock("Thickwood Log", 2004).getInt(2004));
 		JamesBlock.leaves = new BlockThickwoodLeaves(config.getBlock("Thickwood Leaves", 2005).getInt(2005));
-		JamesBlock.materials = new BlockMaterials(config.getBlock("Materials", 2006).getInt(2006));
+		JamesBlock.materials = new BlockMaterials(config.getBlock("Materials", 2006).getInt(2006));	
 		
 		GameRegistry.registerBlock(JamesBlock.thickwood, "Thickwood");
 		GameRegistry.registerBlock(JamesBlock.leaves, "Thickwood Leaves");
 
-		JamesItem.dustGranite =  new ItemDust(config.getItem("Granite Quartz Dust", 2011).getInt(2011));
+		//JamesItem.dustGranite =  new ItemDust(config.getItem("Granite Quartz Dust", 2011).getInt(2011));
 		
 		OreDictionary.registerOre("logThickwood", JamesBlock.thickwood);
 		OreDictionary.registerOre("worldMaterials", new ItemStack(JamesBlock.materials));
 		
-		OreDictionary.registerOre("dustGranite", JamesItem.dustGranite);
+		//OreDictionary.registerOre("dustGranite", JamesItem.dustGranite);
 		
 		config.save();
 	}
