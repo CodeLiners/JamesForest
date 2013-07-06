@@ -17,11 +17,20 @@ public class JamesRecipes {
 		GameRegistry.addRecipe(new ItemStack(JamesBlock.materials, 4, 3), new Object[]{"XX ", "XX ", 'X', new ItemStack(JamesBlock.materials, 4, 2)});
 		GameRegistry.addRecipe(new ItemStack(JamesBlock.materials, 4, 4), new Object[]{"XX ", "XX ", 'X', new ItemStack(JamesBlock.materials, 4, 1)});
 		
+<<<<<<< HEAD
 //		if (Loader.isModLoaded("IC2")){
 //		GameRegistry.addRecipe(new ItemStack(Item.netherQuartz, 4), new Object[]{"GNG", "NGN", "GNG", 'G', new ItemStack(JamesItem.dustGranite, 4, 1), 'N', Block.netherrack});
 //		}
 //		if (Loader.isModLoaded("ThermalExpansion")){
 //			GameRegistry.addRecipe(new ItemStack(Item.netherQuartz, 4), new Object[]{"GNG", "NGN", "GNG", 'G', new ItemStack(JamesItem.dustGranite, 4, 0), 'N', Block.netherrack});
 //		}
+=======
+		if (Loader.isModLoaded("IC2")){
+		GameRegistry.addRecipe(new ItemStack(Item.netherQuartz, 4), new Object[]{"GNG", "NGN", "GNG", 'G', new ItemStack(JamesItem.dustGranite, 4, 1), 'N', Block.netherrack});
+		}
+		if (Loader.isModLoaded("ThermalExpansion")){
+			GameRegistry.addRecipe(new ItemStack(Item.netherQuartz, 4), new Object[]{"GNG", "NGN", "GNG", 'G', new ItemStack(JamesItem.dustGranite, 4, 0), 'N', Block.netherrack});
+		}
+>>>>>>> fcc7b27ab2a9402f31c0637b512ed9e3ebd48407
 	}
 }
