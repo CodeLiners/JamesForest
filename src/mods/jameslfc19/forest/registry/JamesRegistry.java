@@ -3,10 +3,7 @@ package mods.jameslfc19.forest.registry;
 import net.minecraft.creativetab.CreativeTabs;
 import mods.jameslfc19.forest.WorldTab;
 import mods.jameslfc19.forest.biomes.BiomeGenDenseForest;
-<<<<<<< HEAD
 import mods.jameslfc19.forest.biomes.BiomeSavanna;
-=======
->>>>>>> fcc7b27ab2a9402f31c0637b512ed9e3ebd48407
 import mods.jameslfc19.forest.world.WorldGenLimestone;
 import mods.jameslfc19.forest.world.WorldGenOre;
 import mods.jameslfc19.forest.world.WorldGenRareOak;
@@ -24,11 +21,7 @@ public class JamesRegistry {
 		JamesBlock.leaves.setCreativeTab(tab);
 		JamesBlock.materials.setCreativeTab(tab);
 		
-<<<<<<< HEAD
 		//JamesItem.dustGranite.setCreativeTab(tab);
-=======
-		JamesItem.dustGranite.setCreativeTab(tab);
->>>>>>> fcc7b27ab2a9402f31c0637b512ed9e3ebd48407
 	}
 	
 	public static void BiomeInit(){
