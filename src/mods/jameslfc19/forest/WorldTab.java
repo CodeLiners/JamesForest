@@ -1,18 +1,19 @@
 package mods.jameslfc19.forest;
 
 import mods.jameslfc19.forest.registry.JamesBlock;
+import mods.jameslfc19.forest.registry.JamesItem;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
-public class ForestTab extends CreativeTabs {
+public class WorldTab extends CreativeTabs {
 
-	public ForestTab() {
+	public WorldTab() {
 		super("jamesforest");
 	}
 	
 	@Override
 	public ItemStack getIconItemStack() {
-		return new ItemStack(JamesBlock.thickwood, 1, 0);
+		return new ItemStack(JamesBlock.materials, 1, 2);
 	}
 
 }

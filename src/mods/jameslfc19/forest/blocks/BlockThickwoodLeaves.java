@@ -31,7 +31,7 @@ public class BlockThickwoodLeaves extends BlockLeaves {
 
 	@Override
     public void registerIcons(IconRegister register) {
-        this.blockIcon = register.registerIcon("jamesforest:denseForestNormalLeaves");
+        this.blockIcon = register.registerIcon("jamesworld:denseForestNormalLeaves");
     }
 
 	@Override

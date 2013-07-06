@@ -1,38 +1,37 @@
 package mods.jameslfc19.forest.item;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import themike.core.item.ItemBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
+import net.minecraft.util.Icon;
 
-public class ItemDust extends Item {
+public class ItemDust extends ItemBase {
 	
-	public String name;
-	boolean isIC2Dust;
-	
-	public ItemDust(int par1, String dustName, boolean IC2)
-    {
-        super(par1);
-        name = dustName;
-        if(IC2){
-        	this.setUnlocalizedName("dust" + name);
-        	isIC2Dust = true;
-        	} 
-        else {
-        	this.setUnlocalizedName("pulverized" + name);
-        	isIC2Dust = false;
-        }
+	private Icon dust;
+	private Icon pulverized;
+		
+	public ItemDust(int par1) {
+        super(par1, "jamesworld", "dust", new ArrayList<String>(Arrays.asList("pulverizedGranite", "dustGranite")));
     }
 	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister par1IconRegister)
-	{
-		if(isIC2Dust){
-			this.itemIcon = par1IconRegister.registerIcon("jamesforest:dust" + name );
-			} 
-		else {
-        	this.itemIcon = par1IconRegister.registerIcon("jamesforest:pulverized" + name );
-	    	}
-	}
+    @Override
+    public Icon getIcon(int meta) {
+    	if(meta == 0)
+    		return this.pulverized;
+    	else
+    		return this.dust;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister register) {
+    	this.pulverized = register.registerIcon("jamesworld:pulverizedGranite");
+    	this.dust = register.registerIcon("jamesworld:dustGranite");
+    }
+	
 }

@@ -41,7 +41,7 @@ public class WorldGenLimestone implements IWorldGenerator
 
     public WorldGenLimestone()
     {
-        this.clayBlockId = JamesBlock.stoneLimestone.blockID;
+        this.clayBlockId = JamesBlock.materials.blockID;
     }
     
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
@@ -69,10 +69,11 @@ public class WorldGenLimestone implements IWorldGenerator
                         {
                             int j2 = par1World.getBlockId(i1, i2, j1);
 
-                            if (j2 == Block.dirt.blockID || j2 == JamesBlock.stoneLimestone.blockID)
+                            if (j2 == Block.dirt.blockID || j2 == JamesBlock.materials.blockID)
                             {
-                                par1World.setBlock(i1, i2, j1, JamesBlock.stoneLimestone.blockID);
-                                //System.out.println("New Limestone at "+ i1+" "+i2+" "+j1);
+                                par1World.setBlock(i1, i2, j1, JamesBlock.materials.blockID);
+                            	par1World.setBlockMetadataWithNotify(i1, i2, j1, 1, 3);
+                                // System.out.println("New Limestone at "+ i1+" "+i2+" "+j1);
                             }
                         }
                     }
