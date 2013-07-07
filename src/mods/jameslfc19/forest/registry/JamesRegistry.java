@@ -30,6 +30,7 @@ public class JamesRegistry {
 		JamesBlock.materials.setCreativeTab(tab);
 		JamesBlock.coral.setCreativeTab(tab);
 		
+		JamesItem.wolfMeat.setCreativeTab(tab);
 		//JamesItem.dustGranite.setCreativeTab(tab);
 	}
 	

@@ -1,6 +1,8 @@
 tile.logThickwood.name=Thickwood
 tile.leavesThickwood.name=Thickwood Leaves
 
+item.wolfMeat.name=Wolf Meat
+
 materials.sub.stoneGranite.name=Granite
 materials.sub.brickGranite.name=Granite Brick
 materials.sub.carvedGranite.name=Chiseled Granite Brick

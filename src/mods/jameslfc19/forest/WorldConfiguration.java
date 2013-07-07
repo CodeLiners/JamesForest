@@ -5,6 +5,7 @@ import mods.jameslfc19.forest.blocks.BlockCoral;
 import mods.jameslfc19.forest.blocks.BlockMaterials;
 import mods.jameslfc19.forest.blocks.BlockThickwood;
 import mods.jameslfc19.forest.blocks.BlockThickwoodLeaves;
+import mods.jameslfc19.forest.item.FoodWolfMeat;
 import mods.jameslfc19.forest.item.ItemDust;
 import mods.jameslfc19.forest.registry.JamesBlock;
 import mods.jameslfc19.forest.registry.JamesItem;
@@ -26,6 +27,7 @@ public class WorldConfiguration {
 		GameRegistry.registerBlock(JamesBlock.leaves, "Thickwood Leaves");
 
 		//JamesItem.dustGranite =  new ItemDust(config.getItem("Granite Quartz Dust", 2011).getInt(2011));
+		JamesItem.wolfMeat =  new FoodWolfMeat(config.getItem("Wolf Meat", 2012).getInt(2012));
 		
 		OreDictionary.registerOre("logThickwood", JamesBlock.thickwood);
 		OreDictionary.registerOre("worldMaterials", new ItemStack(JamesBlock.materials));
