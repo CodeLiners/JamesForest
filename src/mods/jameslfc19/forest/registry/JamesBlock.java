@@ -7,5 +7,6 @@ public class JamesBlock {
 	public static Block thickwood;
 	public static Block leaves;
 	public static Block materials;
+	public static Block coral;
 
 }

@@ -1,10 +1,19 @@
 tile.logThickwood.name=Thickwood
 tile.leavesThickwood.name=Thickwood Leaves
+
 materials.sub.stoneGranite.name=Granite
 materials.sub.brickGranite.name=Granite Brick
 materials.sub.carvedGranite.name=Chiseled Granite Brick
 materials.sub.stoneLimestone.name=Limestone
 materials.sub.brickLimestone.name=Limestone Brick
+
+coral.sub.0.name=Coral
+coral.sub.1.name=Coral
+coral.sub.2.name=Coral
+coral.sub.3.name=Coral
+coral.sub.4.name=Coral
+coral.sub.5.name=Coral
+
 slab.slabLimestone.name=Limestone Slab
 dust.sub.dustGranite.name=Granite Quartz Dust
 dust.sub.pulverizedGranite.name=Pulverized Granite Quartz

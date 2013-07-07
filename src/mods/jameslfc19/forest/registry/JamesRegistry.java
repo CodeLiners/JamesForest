@@ -1,13 +1,23 @@
 package mods.jameslfc19.forest.registry;
 
 import net.minecraft.creativetab.CreativeTabs;
+<<<<<<< HEAD
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 import mods.jameslfc19.forest.JamesWorld;
+=======
+import net.minecraft.world.biome.BiomeGenBase;
+>>>>>>> ba998c948d50b8186c00649c0b41f4c9a72295a0
 import mods.jameslfc19.forest.WorldTab;
 import mods.jameslfc19.forest.biomes.BiomeGenDenseForest;
+import mods.jameslfc19.forest.biomes.BiomeGenIcyMountains;
 import mods.jameslfc19.forest.biomes.BiomeSavanna;
+<<<<<<< HEAD
 import mods.jameslfc19.forest.entity.mob.EntityIceGolem;
+=======
+import mods.jameslfc19.forest.world.WorldGenCoral;
+import mods.jameslfc19.forest.world.WorldGenIce;
+>>>>>>> ba998c948d50b8186c00649c0b41f4c9a72295a0
 import mods.jameslfc19.forest.world.WorldGenLimestone;
 import mods.jameslfc19.forest.world.WorldGenOre;
 import mods.jameslfc19.forest.world.WorldGenRareOak;
@@ -18,6 +28,10 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class JamesRegistry {
+	
+	public static BiomeGenBase SAVANNA = new BiomeSavanna(70);
+	public static BiomeGenBase ICY_MOUNTAIN = new BiomeGenIcyMountains(71);
+	
 	public static CreativeTabs tab;
 	
 	public static void CreativeTabInit(){
@@ -25,17 +39,21 @@ public class JamesRegistry {
 		JamesBlock.thickwood.setCreativeTab(tab);
 		JamesBlock.leaves.setCreativeTab(tab);
 		JamesBlock.materials.setCreativeTab(tab);
+		JamesBlock.coral.setCreativeTab(tab);
 		
 		//JamesItem.dustGranite.setCreativeTab(tab);
 	}
 	
 	public static void BiomeInit(){
 		//GameRegistry.addBiome(new BiomeGenDenseForest(70));
-		GameRegistry.addBiome(new BiomeSavanna(70));
+		GameRegistry.addBiome(SAVANNA);
+		GameRegistry.addBiome(ICY_MOUNTAIN);
 	}
 	
 	public static void WorldGenInit(){
 		GameRegistry.registerWorldGenerator(new WorldGenOre()); 
+		GameRegistry.registerWorldGenerator(new WorldGenIce()); 
+		GameRegistry.registerWorldGenerator(new WorldGenCoral()); 
 		GameRegistry.registerWorldGenerator(new WorldGenThickwood()); 
 		GameRegistry.registerWorldGenerator(new WorldGenRareOak()); 
 		GameRegistry.registerWorldGenerator(new WorldGenShrine()); 
