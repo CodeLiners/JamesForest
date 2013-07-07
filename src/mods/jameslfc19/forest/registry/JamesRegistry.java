@@ -1,23 +1,17 @@
 package mods.jameslfc19.forest.registry;
 
 import net.minecraft.creativetab.CreativeTabs;
-<<<<<<< HEAD
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 import mods.jameslfc19.forest.JamesWorld;
-=======
 import net.minecraft.world.biome.BiomeGenBase;
->>>>>>> ba998c948d50b8186c00649c0b41f4c9a72295a0
 import mods.jameslfc19.forest.WorldTab;
 import mods.jameslfc19.forest.biomes.BiomeGenDenseForest;
 import mods.jameslfc19.forest.biomes.BiomeGenIcyMountains;
 import mods.jameslfc19.forest.biomes.BiomeSavanna;
-<<<<<<< HEAD
 import mods.jameslfc19.forest.entity.mob.EntityIceGolem;
-=======
 import mods.jameslfc19.forest.world.WorldGenCoral;
 import mods.jameslfc19.forest.world.WorldGenIce;
->>>>>>> ba998c948d50b8186c00649c0b41f4c9a72295a0
 import mods.jameslfc19.forest.world.WorldGenLimestone;
 import mods.jameslfc19.forest.world.WorldGenOre;
 import mods.jameslfc19.forest.world.WorldGenRareOak;
