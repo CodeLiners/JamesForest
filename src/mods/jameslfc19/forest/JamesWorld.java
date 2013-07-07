@@ -2,7 +2,7 @@ package mods.jameslfc19.forest;
 
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
-import mods.jameslfc19.forest.event.JamesWorldHandler;
+import mods.jameslfc19.forest.event.IcyMountainHandler;
 import mods.jameslfc19.forest.recipes.EE3Recipes;
 import mods.jameslfc19.forest.recipes.IC2Recipes;
 import mods.jameslfc19.forest.recipes.JamesRecipes;
@@ -31,7 +31,8 @@ public class JamesWorld {
 	public void preLoad(FMLPreInitializationEvent event) {
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		WorldConfiguration.init(config);
-		MinecraftForge.EVENT_BUS.register(new JamesWorldHandler());
+		MinecraftForge.TERRAIN_GEN_BUS.register(new IcyMountainHandler());
+		MinecraftForge.ORE_GEN_BUS.register(new IcyMountainHandler());
 	}
 
 	@EventHandler

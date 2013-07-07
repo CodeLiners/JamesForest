@@ -11,7 +11,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.common.IWorldGenerator;
 
-public class WorldGenThickwood implements IWorldGenerator{
+public class WorldGenThickwood implements IWorldGenerator {
 	
 	/**Set the Tree properties here.**/
 	public int treeLogId = JamesBlock.thickwood.blockID;

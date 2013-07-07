@@ -14,7 +14,7 @@ public class WorldGenOre implements IWorldGenerator{
 	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {	
-		if(world.provider.dimensionId != 1 && world.provider.dimensionId != -1){
+		if(world.provider.dimensionId != 1 && world.provider.dimensionId != -1) {
 			generateSurfaceGranite(world, random, chunkX, chunkZ);
 		}
 	}

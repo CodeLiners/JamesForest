@@ -1,6 +1,7 @@
 package mods.jameslfc19.forest;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import mods.jameslfc19.forest.blocks.BlockCoral;
 import mods.jameslfc19.forest.blocks.BlockMaterials;
 import mods.jameslfc19.forest.blocks.BlockThickwood;
 import mods.jameslfc19.forest.blocks.BlockThickwoodLeaves;
@@ -19,6 +20,7 @@ public class WorldConfiguration {
 		JamesBlock.thickwood = new BlockThickwood(config.getBlock("Thickwood Log", 2004).getInt(2004));
 		JamesBlock.leaves = new BlockThickwoodLeaves(config.getBlock("Thickwood Leaves", 2005).getInt(2005));
 		JamesBlock.materials = new BlockMaterials(config.getBlock("Materials", 2006).getInt(2006));	
+		JamesBlock.coral = new BlockCoral(config.getBlock("Coral", 2007).getInt(2007));	
 		
 		GameRegistry.registerBlock(JamesBlock.thickwood, "Thickwood");
 		GameRegistry.registerBlock(JamesBlock.leaves, "Thickwood Leaves");
