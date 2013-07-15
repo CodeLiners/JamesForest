@@ -31,6 +31,7 @@ public class JamesWorld {
 	public void preLoad(FMLPreInitializationEvent event) {
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		WorldConfiguration.init(config);
+		
 		MinecraftForge.EVENT_BUS.register(new IcyMountainHandler());
 		MinecraftForge.TERRAIN_GEN_BUS.register(new IcyMountainHandler());
 		MinecraftForge.ORE_GEN_BUS.register(new IcyMountainHandler());

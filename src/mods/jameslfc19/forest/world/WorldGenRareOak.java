@@ -134,7 +134,7 @@ public class WorldGenRareOak implements IWorldGenerator{
         TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)world.getBlockTileEntity(x, y-1, z);
 
         if (tileentitymobspawner != null) {
-            tileentitymobspawner.func_98049_a().setMobID("Zombie");
+            tileentitymobspawner.getSpawnerLogic().setMobID("Zombie");
         
         }
         world.setBlock(x, y-2, z, 54);

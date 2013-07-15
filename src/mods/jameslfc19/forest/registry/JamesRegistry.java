@@ -17,6 +17,7 @@ import mods.jameslfc19.forest.world.WorldGenOre;
 import mods.jameslfc19.forest.world.WorldGenRareOak;
 import mods.jameslfc19.forest.world.WorldGenShrine;
 import mods.jameslfc19.forest.world.WorldGenThickwood;
+import mods.jameslfc19.forest.world.trees.WorldGenAcadiaTrees;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -47,12 +48,16 @@ public class JamesRegistry {
 	
 	public static void WorldGenInit(){
 		GameRegistry.registerWorldGenerator(new WorldGenOre()); 
+		GameRegistry.registerWorldGenerator(new WorldGenLimestone()); 
 		GameRegistry.registerWorldGenerator(new WorldGenIce()); 
-		GameRegistry.registerWorldGenerator(new WorldGenCoral()); 
+		
+		GameRegistry.registerWorldGenerator(new WorldGenCoral());
+		
+		GameRegistry.registerWorldGenerator(new WorldGenAcadiaTrees()); 
 		GameRegistry.registerWorldGenerator(new WorldGenThickwood()); 
 		GameRegistry.registerWorldGenerator(new WorldGenRareOak()); 
+		
 		GameRegistry.registerWorldGenerator(new WorldGenShrine()); 
-		GameRegistry.registerWorldGenerator(new WorldGenLimestone()); 
 	}
 	
 	public static void EntityInit(){

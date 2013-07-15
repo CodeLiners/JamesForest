@@ -576,7 +576,7 @@ public class WorldGenShrine implements IWorldGenerator {
     TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)world.getBlockTileEntity(i + 3, j + 1, k + 3);
 
     if (tileentitymobspawner != null) {
-        tileentitymobspawner.func_98049_a().setMobID(DungeonHooks.getRandomDungeonMob(new Random()));
+        tileentitymobspawner.getSpawnerLogic().setMobID(DungeonHooks.getRandomDungeonMob(new Random()));
     }
 	
 	world.setBlock(i + 3,  j + 0, k + 3, Block.chest.blockID);
